@@ -3,12 +3,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 
-datos = pd.read_csv("data/consultas.csv")
-import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.pipeline import Pipeline
-
 # Cargar datos
 datos = pd.read_csv("data/consultas.csv")
 
@@ -22,7 +16,7 @@ modelo = Pipeline([
 modelo.fit(datos["consulta"], datos["categoria"])
 
 # Consulta de prueba
-consulta = ["La impresora no funciona"]
+consulta = ["No puedo entrar al sistema"]
 
 # Predicción
 prediccion = modelo.predict(consulta)
