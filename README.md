@@ -1,4 +1,4 @@
-# 🖥️ Asistente de Soporte TI Híbrido
+# 🖥️ Asistente de Soporte TI Híbrido - christian Felipe Alea, Andres Esteban Vargas
 
 ## Descripción
 

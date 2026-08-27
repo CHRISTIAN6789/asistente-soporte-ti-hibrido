@@ -1,5 +1,5 @@
 # 🤖 Inteligencia Artificial · 10.º Semestre
-### Christian Felipe Alea Agudelo · Grupo S10A
+### Christian Felipe Alea Agudelo - Andres Esteban Cruz · Grupo S10A
 
 > Proyecto académico desarrollado para la asignatura de **Inteligencia Artificial**.
 >
