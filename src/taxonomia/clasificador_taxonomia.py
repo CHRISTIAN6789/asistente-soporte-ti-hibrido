@@ -36,7 +36,6 @@ def clasificar_taxonomia(texto):
     ):
         categorias.append("Vision por Computador")
 
-    # Aprendizaje Automático Predictivo
     if (
         "predecir" in texto
         or "fraude" in texto
@@ -95,7 +94,6 @@ def clasificar_taxonomia(texto):
     ):
         categorias.append("Sistemas Expertos")
 
-    # Robótica y Sistemas Autónomos
     if (
         "robot" in texto
         or "robots" in texto
