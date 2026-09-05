@@ -7,3 +7,13 @@ consulta,categoria
 "Pantalla azul al iniciar",Hardware
 "VPN no conecta",Red
 "Outlook no abre",Correo
+"Servidor principal caído",Infraestructura
+"No puedo acceder al sistema ERP",Software
+"Equipo extremadamente lento",Hardware
+"Error de autenticación MFA",Acceso
+"Malware detectado en el equipo",Seguridad
+"Antivirus desactualizado",Seguridad
+"Aplicación corporativa no responde",Software
+"Wifi corporativo intermitente",Red
+"Usuario bloqueado",Acceso
+"Error al enviar correos",Correo

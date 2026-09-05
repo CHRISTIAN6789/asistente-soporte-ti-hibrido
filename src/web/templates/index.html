@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Asistente Inteligente de Soporte TI
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<divezado">
+
+        <h1>🤖 Asistente Inteligente de Soporte TI</h1>
+
+        <p class="subtitulo">
+            Sistema Híbrido basado en Taxonomía IA,
+            Sistema Experto,
+            Recuperación de Información,
+            Clasificación Inteligente,
+            A* y Minimax.
+        </p>
+
+        <div class="chat-banner">
+            Hola, soy tu asistente inteligente de soporte TI.
+            Describe el incidente que deseas analizar.
+        </div>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="consulta"
+                placeholder="Describe tu incidente tecnológico..."
+                required>
+
+            <button type="submit">
+                Analizar
+            </button>
+
+        </form>
+
+    </div>
+
+    {% if resultado %}
+
+    <div class="card">
+
+        <div class="section">
+
+            <h2>📋 Consulta</h2>
+
+            <p>{{ resultado.consulta }}</p>
+
+        </div>
+
+        <div class="section">
+
+            <h2>📂 Categorías Detectadas</h2>
+
+            <ul>
+                {% for categoria in resultado.categorias %}
+                <li>{{ categoria }}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+        <div class="section">
+
+            <h2>🎫 Clasificación del Ticket</h2>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <strong>Tipo</strong>
+                    <p>{{ resultado.ticket.tipo }}</p>
+                </div>
+
+                <div class="info-box">
+                    <strong>Criticidad</strong>
+                    <p>{{ resultado.ticket.criticidad }}</p>
+                </div>
+
+                <div class="info-box">
+                    <strong>Impacto</strong>
+                    <p>{{ resultado.ticket.impacto }}</p>
+                </div>
+
+                <div class="info-box">
+                    <strong>Prioridad</strong>
+                    <p>
+                        <span class="badge">
+                            {{ resultado.ticket.prioridad }}
+                        </span>
+                    </p>
+                </div>
+
+                <div class="info-box">
+                    <strong>Escalamiento</strong>
+                    <p>{{ resultado.ticket.escalamiento }}</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="section">
+
+            <h2>🧠 Sistema Experto</h2>
+
+            <p>{{ resultado.regla }}</p>
+
+        </div>
+
+        <div class="section">
+
+            <h2>📚 Recuperación de Información</h2>
+
+            <p>{{ resultado.informacion }}</p>
+
+            <p>
+                <strong>Similitud TF-IDF:</strong>
+                {{ resultado.similitud }}
+            </p>
+
+        </div>
+
+        <div class="section">
+
+            <h2>🏷️ Clasificación Inteligente</h2>
+
+            <p>
+                <strong>Categoría Predicha:</strong>
+                {{ resultado.categoria_predicha }}
+            </p>
+
+            <p>
+                <strong>Similitud:</strong>
+                {{ resultado.similitud_clase }}
+            </p>
+
+        </div>
+
+        <div class="section">
+
+            <h2>🗺️ Ruta de Resolución (A*)</h2>
+
+            <div class="ruta">
+
+                {% for paso in resultado.ruta %}
+
+                    <div class="paso">
+                        {{ paso }}
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+        <div class="section">
+
+            <h2>⚖️ Priorización (Minimax)</h2>
+
+            <div class="minimax-grid">
+
+                <div class="decision">
+                    <h3>Servidor</h3>
+                    <span class="valor">10</span>
+                </div>
+
+                <div class="decision">
+                    <h3>VPN</h3>
+                    <span class="valor">6</span>
+                </div>
+
+                <div class="decision">
+                    <h3>Impresora</h3>
+                    <span class="valor">2</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="section resultado">
+
+            <h2>✅ Resultado Final</h2>
+
+            <ul>
+                <li>Incidente analizado</li>
+                <li>Categoría IA identificada</li>
+                <li>Ticket clasificado</li>
+                <li>Regla aplicada</li>
+                <li>Información recuperada</li>
+                <li>Clasificación realizada</li>
+                <li>Ruta de resolución generada</li>
+                <li>Priorización calculada</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

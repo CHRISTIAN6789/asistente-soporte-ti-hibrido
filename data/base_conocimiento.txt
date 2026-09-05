@@ -1,0 +1,49 @@
+Si el correo corporativo no funciona se deben verificar credenciales, conectividad y disponibilidad del servicio.
+
+Si Outlook no abre se debe validar el perfil del usuario y la configuración de la cuenta.
+
+Si la VPN no conecta se debe revisar la configuración del cliente VPN, la conectividad de red y las credenciales.
+
+Si la impresora no imprime se deben verificar los controladores, la conexión física y la cola de impresión.
+
+Si un equipo presenta lentitud se debe revisar el uso de memoria, procesos activos y espacio disponible en disco.
+
+Si aparece una pantalla azul se deben revisar controladores, actualizaciones recientes y estado del hardware.
+
+Si se detecta malware se debe aislar el equipo, ejecutar un análisis completo e informar al área de seguridad.
+
+Si un servidor está caído se deben validar servicios críticos, recursos del sistema y registros de eventos.
+
+Si un usuario olvida su contraseña se debe realizar un restablecimiento seguro y validar su identidad.
+
+Si una cuenta se encuentra bloqueada se debe revisar la política de acceso y desbloquear al usuario autorizado.
+
+Si la autenticación multifactor (MFA) falla se debe validar el dispositivo registrado y los métodos de autenticación configurados.
+
+Si el antivirus está desactualizado se deben actualizar las firmas y ejecutar una verificación completa del sistema.
+
+Si una aplicación corporativa no responde se deben revisar los registros de errores y reiniciar los servicios asociados.
+
+Si el sistema ERP no permite acceso se deben validar permisos, credenciales y disponibilidad del servidor.
+
+Si la red corporativa presenta lentitud se deben revisar los dispositivos de red y la utilización del ancho de banda.
+
+Si el servicio de internet es inestable se debe verificar el estado de la conexión y los equipos de comunicaciones.
+
+Si el disco duro se encuentra lleno se deben eliminar archivos temporales, liberar espacio y revisar el crecimiento de datos.
+
+Si un usuario no tiene permisos suficientes se debe validar su perfil y asignar los privilegios correspondientes.
+
+Si una impresora de red no está disponible se debe verificar conectividad, estado del servicio y configuración IP.
+
+Si Outlook no sincroniza correos se debe revisar la conexión con el servidor de correo y el estado de la cuenta.
+
+Si un servidor presenta alto consumo de recursos se deben analizar procesos, servicios y capacidad disponible.
+
+Si se detectan múltiples intentos fallidos de inicio de sesión se debe revisar la seguridad de la cuenta y posibles accesos no autorizados.
+
+Si una actualización provoca fallos en el sistema se debe revisar compatibilidad y considerar una restauración controlada.
+
+Si el WiFi corporativo es intermitente se deben validar puntos de acceso, cobertura y capacidad de la red inalámbrica.
+
+Si una carpeta compartida no está disponible se deben revisar permisos, conectividad y disponibilidad del servidor de archivos.
