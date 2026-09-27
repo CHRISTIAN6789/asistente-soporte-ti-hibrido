@@ -1,19 +1,57 @@
 consulta,categoria
 "No puedo iniciar sesión",Acceso
 "Olvidé mi contraseña",Acceso
-"Internet muy lento",Red
+"Error de autenticación MFA",Acceso
+"Usuario bloqueado",Acceso
+"Mi contraseña aparece como incorrecta",Acceso
+"No recibo el código de autenticación",Acceso
+"Mi cuenta corporativa está bloqueada",Acceso
+"No puedo autenticarme en el sistema",Acceso
 "No funciona el correo",Correo
+"Outlook no abre",Correo
+"Error al enviar correos",Correo
+"Correo corporativo no funciona",Correo
+"No recibo mensajes en Outlook",Correo
+"Outlook no sincroniza correos",Correo
+"No puedo enviar correos corporativos",Correo
+"El buzón de correo presenta errores",Correo
 "No imprime la impresora",Hardware
 "Pantalla azul al iniciar",Hardware
-"VPN no conecta",Red
-"Outlook no abre",Correo
-"Servidor principal caído",Infraestructura
-"No puedo acceder al sistema ERP",Software
 "Equipo extremadamente lento",Hardware
-"Error de autenticación MFA",Acceso
+"Disco duro lleno",Hardware
+"Computador no inicia",Hardware
+"El equipo se reinicia constantemente",Hardware
+"El teclado no funciona correctamente",Hardware
+"El computador presenta bajo rendimiento",Hardware
+"Servidor principal caído",Infraestructura
+"Servidor con alto consumo de recursos",Infraestructura
+"Servidor no responde",Infraestructura
+"Servicio del servidor detenido",Infraestructura
+"Servidor presenta uso alto de memoria",Infraestructura
+"Servidor corporativo fuera de servicio",Infraestructura
+"Servidor presenta errores críticos",Infraestructura
+"Servicio principal de infraestructura caído",Infraestructura
+"Internet muy lento",Red
+"VPN no conecta",Red
+"Wifi corporativo intermitente",Red
+"No tengo acceso a internet",Red
+"La red corporativa está caída",Red
+"VPN presenta error de conexión",Red
+"El equipo pierde conectividad",Red
+"La conexión de red es inestable",Red
 "Malware detectado en el equipo",Seguridad
 "Antivirus desactualizado",Seguridad
+"Posible infección por virus",Seguridad
+"Se detectaron archivos sospechosos",Seguridad
+"Antivirus detectó una amenaza",Seguridad
+"Equipo posiblemente infectado con malware",Seguridad
+"Se detectaron accesos sospechosos",Seguridad
+"Alerta de seguridad en el computador",Seguridad
+"No puedo acceder al sistema ERP",Software
 "Aplicación corporativa no responde",Software
-"Wifi corporativo intermitente",Red
-"Usuario bloqueado",Acceso
-"Error al enviar correos",Correo
+"El programa no abre",Software
+"Aplicación presenta error al iniciar",Software
+"El sistema ERP presenta fallos",Software
+"Software corporativo se cierra solo",Software
+"Aplicación empresarial está bloqueada",Software
+"Programa corporativo presenta errores",Software

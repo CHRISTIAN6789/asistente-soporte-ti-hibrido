@@ -13,9 +13,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-
     font-family: "Segoe UI", Arial, sans-serif;
-
     background: #eef3f8;
     color: #1f2937;
 }
@@ -28,7 +26,6 @@ body {
 .container {
     width: 94%;
     max-width: 1250px;
-
     margin: 35px auto;
 }
 
@@ -38,13 +35,13 @@ body {
    ========================================================= */
 
 .card {
+    margin-bottom: 25px;
+    padding: 28px;
+
     background: #ffffff;
 
     border: 1px solid #e2e8f0;
     border-radius: 16px;
-
-    padding: 28px;
-    margin-bottom: 25px;
 
     box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
 }
@@ -56,25 +53,19 @@ body {
 
 .encabezado {
     text-align: center;
-
     border-top: 5px solid #0078d4;
 }
 
 h1 {
     margin: 0 0 10px;
-
     color: #0078d4;
-
     font-size: 34px;
 }
 
 .subtitulo {
     max-width: 850px;
-
     margin: 10px auto 22px;
-
     color: #64748b;
-
     line-height: 1.6;
 }
 
@@ -85,15 +76,12 @@ h1 {
 
 .chat-banner {
     max-width: 900px;
-
     margin: 20px auto;
-
     padding: 16px;
 
     text-align: left;
 
     background: #e8f4ff;
-
     color: #334155;
 
     border-left: 5px solid #0078d4;
@@ -107,11 +95,9 @@ h1 {
 
 form {
     max-width: 900px;
-
     margin: 22px auto 0;
 
     display: flex;
-
     gap: 10px;
 }
 
@@ -158,18 +144,16 @@ button {
 
 button:hover {
     background: #005fa3;
-
     transform: translateY(-1px);
 }
 
 
 /* =========================================================
-   SECCIONES DE RESULTADOS
+   SECCIONES
    ========================================================= */
 
 .section {
     margin-top: 22px;
-
     padding: 22px;
 
     background: #f8fafc;
@@ -194,17 +178,16 @@ button:hover {
 .consulta-texto {
     margin-bottom: 0;
 
+    color: #334155;
+
     font-size: 18px;
     font-weight: 600;
-
-    color: #334155;
 }
 
 .respuesta-destacada {
     padding: 13px 15px;
 
     background: #eff6ff;
-
     color: #1d4ed8;
 
     border-radius: 8px;
@@ -266,7 +249,6 @@ button:hover {
     padding: 6px 14px;
 
     background: #fff3cd;
-
     color: #856404;
 
     border: 1px solid #fde68a;
@@ -282,9 +264,7 @@ button:hover {
 
 .ruta {
     display: flex;
-
     align-items: center;
-
     flex-wrap: wrap;
 
     gap: 10px;
@@ -296,7 +276,6 @@ button:hover {
     padding: 12px 18px;
 
     background: #0078d4;
-
     color: #ffffff;
 
     border-radius: 9px;
@@ -337,7 +316,6 @@ button:hover {
 
 .decision h3 {
     margin: 0 0 10px;
-
     color: #334155;
 }
 
@@ -365,7 +343,6 @@ button:hover {
 
 .semana7 {
     background: #faf8ff;
-
     border-left-color: #7c3aed;
 }
 
@@ -375,13 +352,12 @@ button:hover {
 
 .descripcion-semana7 {
     max-width: 900px;
-
     color: #64748b;
 }
 
 
 /* =========================================================
-   CONTENEDOR DE REPRESENTACIONES
+   REPRESENTACIONES SEMANA 7
    ========================================================= */
 
 .representaciones-grid {
@@ -405,7 +381,6 @@ button:hover {
 
 .representacion-card h3 {
     margin: 0 0 15px;
-
     font-size: 19px;
 }
 
@@ -424,13 +399,11 @@ button:hover {
 
 .vector-box {
     margin: 10px 0 15px;
-
     padding: 13px;
 
     text-align: center;
 
     background: #eff6ff;
-
     color: #1e40af;
 
     border: 1px solid #bfdbfe;
@@ -442,9 +415,7 @@ button:hover {
 
 .vector-box.referencia {
     background: #f1f5f9;
-
     color: #475569;
-
     border-color: #cbd5e1;
 }
 
@@ -454,7 +425,6 @@ button:hover {
     padding: 8px 16px;
 
     background: #dbeafe;
-
     color: #1d4ed8;
 
     border-radius: 20px;
@@ -478,7 +448,6 @@ button:hover {
 
 .hechos {
     display: flex;
-
     flex-direction: column;
 
     gap: 8px;
@@ -490,7 +459,6 @@ button:hover {
     padding: 9px 11px;
 
     background: #f3e8ff;
-
     color: #6b21a8;
 
     border: 1px solid #e9d5ff;
@@ -502,13 +470,11 @@ button:hover {
 
 .conclusion-box {
     margin-top: 16px;
-
     padding: 15px;
 
     text-align: center;
 
     background: #ede9fe;
-
     color: #5b21b6;
 
     border-radius: 9px;
@@ -539,9 +505,7 @@ button:hover {
 
 .automata-flow {
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
 
     margin: 18px 0;
@@ -549,7 +513,6 @@ button:hover {
 
 .estado {
     width: 82%;
-
     max-width: 230px;
 
     padding: 12px;
@@ -557,7 +520,6 @@ button:hover {
     text-align: center;
 
     background: #0078d4;
-
     color: #ffffff;
 
     border-radius: 9px;
@@ -576,13 +538,11 @@ button:hover {
 
 .estado-final {
     margin-top: 15px;
-
     padding: 11px;
 
     text-align: center;
 
     background: #ecfdf5;
-
     color: #065f46;
 
     border: 1px solid #a7f3d0;
@@ -591,13 +551,11 @@ button:hover {
 
 .automata-aceptado {
     margin-top: 12px;
-
     padding: 10px;
 
     text-align: center;
 
     background: #dcfce7;
-
     color: #166534;
 
     border: 1px solid #86efac;
@@ -608,13 +566,11 @@ button:hover {
 
 .automata-rechazado {
     margin-top: 12px;
-
     padding: 10px;
 
     text-align: center;
 
     background: #fee2e2;
-
     color: #991b1b;
 
     border: 1px solid #fca5a5;
@@ -634,17 +590,14 @@ button:hover {
     color: #64748b;
 
     font-size: 14px;
-
     line-height: 1.6;
 }
 
 .mensaje-error {
     margin-top: 10px;
-
     padding: 10px;
 
     background: #fff7ed;
-
     color: #9a3412;
 
     border-radius: 8px;
@@ -652,7 +605,6 @@ button:hover {
 
 .comparacion-representaciones {
     margin-top: 22px;
-
     padding: 18px;
 
     background: #ffffff;
@@ -663,8 +615,557 @@ button:hover {
 
 .comparacion-representaciones h3 {
     margin-top: 0;
+    color: #6d28d9;
+}
+
+
+/* =========================================================
+   SEMANA 8
+   ========================================================= */
+
+.semana8 {
+    background: linear-gradient(
+        135deg,
+        #f0fdfa,
+        #f8fafc
+    );
+
+    border-left-color: #0f766e;
+}
+
+.semana8 h2 {
+    color: #0f766e;
+    font-size: 24px;
+}
+
+.descripcion-semana8 {
+    max-width: 950px;
+
+    color: #64748b;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   GRID SEMANA 8
+   ========================================================= */
+
+.semana8-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   TARJETAS SEMANA 8
+   ========================================================= */
+
+.semana8-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.semana8-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+}
+
+.semana8-card h3 {
+    margin: 0 0 14px;
+
+    font-size: 20px;
+}
+
+.semana8-card > p {
+    min-height: 105px;
+
+    margin: 0 0 18px;
+
+    color: #64748b;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   COLORES TARJETAS SEMANA 8
+   ========================================================= */
+
+.red-neuronal {
+    border-top: 5px solid #2563eb;
+}
+
+.red-neuronal h3 {
+    color: #2563eb;
+}
+
+.sqlite {
+    border-top: 5px solid #0f766e;
+}
+
+.sqlite h3 {
+    color: #0f766e;
+}
+
+.ontologia {
+    border-top: 5px solid #7c3aed;
+}
+
+.ontologia h3 {
+    color: #6d28d9;
+}
+
+
+/* =========================================================
+   BLOQUES DE INFORMACION
+   ========================================================= */
+
+.semana8-dato {
+    margin-bottom: 10px;
+    padding: 13px 14px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+}
+
+.semana8-dato span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #64748b;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.semana8-dato strong {
+    display: block;
+
+    color: #0f172a;
+
+    font-size: 18px;
+    font-weight: 750;
+
+    overflow-wrap: anywhere;
+}
+
+.red-neuronal .semana8-dato strong {
+    color: #1d4ed8;
+}
+
+.sqlite .semana8-dato strong {
+    color: #0f766e;
+}
+
+.ontologia .semana8-dato strong {
+    color: #6d28d9;
+}
+
+
+/* =========================================================
+   ARCHIVOS DEL MODELO
+   ========================================================= */
+
+.archivo-semana8 {
+    margin-top: 8px;
+    padding: 11px 13px;
+
+    background: #f1f5f9;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.archivo-semana8 span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #64748b;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+.archivo-semana8 strong {
+    display: block;
+
+    color: #334155;
+
+    font-size: 13px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   FLUJO MLP
+   ========================================================= */
+
+.flujo-semana8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 22px;
+}
+
+.flujo-elemento {
+    width: 82%;
+
+    padding: 11px 14px;
+
+    text-align: center;
+
+    color: #1d4ed8;
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.flujo-elemento.destacado {
+    color: #ffffff;
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.flujo-elemento.resultado-mlp {
+    color: #166534;
+    background: #dcfce7;
+    border-color: #86efac;
+}
+
+.flujo-flecha {
+    margin: 5px 0;
+
+    color: #94a3b8;
+
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   SQLITE
+   ========================================================= */
+
+.estado-correcto {
+    margin: 7px 0 15px;
+    padding: 11px;
+
+    text-align: center;
+
+    color: #166534;
+    background: #dcfce7;
+
+    border: 1px solid #86efac;
+    border-radius: 9px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FLUJO SQLITE
+   ========================================================= */
+
+.evidencia-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 7px;
+}
+
+.evidencia-paso {
+    width: 82%;
+
+    padding: 11px 14px;
+
+    text-align: center;
+
+    color: #047857;
+    background: #ecfdf5;
+
+    border: 1px solid #a7f3d0;
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.evidencia-paso.evidencia-final {
+    color: #ffffff;
+    background: #0f766e;
+    border-color: #0f766e;
+}
+
+.evidencia-flecha {
+    margin: 5px 0;
+
+    color: #94a3b8;
+
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   RELACIONES ONTOLOGICAS
+   ========================================================= */
+
+.relaciones-ontologicas {
+    margin-top: 18px;
+    padding-top: 15px;
+
+    border-top: 1px solid #ede9fe;
+}
+
+.relaciones-ontologicas h4 {
+    margin: 0 0 12px;
 
     color: #6d28d9;
+
+    font-size: 14px;
+}
+
+.relacion-ontologica {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-bottom: 10px;
+    padding: 11px;
+
+    background: #faf5ff;
+
+    border: 1px solid #e9d5ff;
+    border-radius: 9px;
+
+    font-size: 13px;
+}
+
+.nodo-origen,
+.nodo-destino {
+    padding: 6px 9px;
+
+    color: #5b21b6;
+    background: #ede9fe;
+
+    border-radius: 6px;
+
+    font-weight: 700;
+}
+
+.tipo-relacion {
+    padding: 5px 8px;
+
+    color: #7c3aed;
+    background: #f5f3ff;
+
+    border-radius: 6px;
+
+    font-weight: 600;
+}
+
+.flecha-relacion {
+    color: #94a3b8;
+    font-weight: bold;
+}
+
+.sin-relaciones {
+    margin-top: 15px;
+    padding: 11px;
+
+    color: #64748b;
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FLUJO GENERAL SEMANA 8
+   ========================================================= */
+
+.integracion-semana8 {
+    margin-top: 25px;
+    padding: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #bae6fd;
+    border-radius: 13px;
+
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+}
+
+.integracion-semana8 h3 {
+    margin: 0 0 8px;
+
+    color: #0369a1;
+}
+
+.integracion-semana8 > p {
+    margin-top: 0;
+
+    color: #64748b;
+}
+
+.integracion-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.integracion-paso {
+    min-width: 115px;
+
+    padding: 13px 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+
+    background: #f8fafc;
+
+    border: 1px solid #dbe3ec;
+    border-radius: 10px;
+}
+
+.numero-paso {
+    width: 25px;
+    height: 25px;
+
+    margin: 0 auto 7px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    background: #0078d4;
+
+    border-radius: 50%;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.integracion-paso strong {
+    color: #0f172a;
+
+    font-size: 14px;
+}
+
+.integracion-paso small {
+    margin-top: 4px;
+
+    color: #64748b;
+}
+
+.prediccion-paso {
+    background: #eff6ff;
+
+    border-color: #93c5fd;
+}
+
+.prediccion-paso strong {
+    color: #1d4ed8;
+}
+
+.integracion-flecha {
+    color: #94a3b8;
+
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   INTERPRETACION SEMANA 8
+   ========================================================= */
+
+.interpretacion-semana8 {
+    margin-top: 22px;
+    padding: 21px;
+
+    background: linear-gradient(
+        135deg,
+        #f0fdfa,
+        #ecfeff
+    );
+
+    border: 1px solid #99f6e4;
+    border-radius: 12px;
+}
+
+.interpretacion-semana8 h3 {
+    margin: 0 0 15px;
+
+    color: #0f766e;
+}
+
+.interpretacion-semana8 p {
+    margin: 8px 0;
+
+    color: #475569;
+
+    line-height: 1.65;
+}
+
+.interpretacion-semana8 strong {
+    color: #0f766e;
 }
 
 
@@ -674,7 +1175,6 @@ button:hover {
 
 .resultado {
     background: #eefaf1;
-
     border-left-color: #28a745;
 }
 
@@ -701,7 +1201,7 @@ li {
 
 
 /* =========================================================
-   RESPONSIVE
+   RESPONSIVE TABLET
    ========================================================= */
 
 @media (max-width: 950px) {
@@ -709,7 +1209,8 @@ li {
     .info-grid,
     .clasificacion-grid,
     .representaciones-grid,
-    .minimax-grid {
+    .minimax-grid,
+    .semana8-grid {
         grid-template-columns: 1fr;
     }
 
@@ -724,8 +1225,28 @@ li {
     button {
         width: 100%;
     }
+
+    .semana8-card > p {
+        min-height: auto;
+    }
+
+    .integracion-flow {
+        flex-direction: column;
+    }
+
+    .integracion-paso {
+        width: 100%;
+    }
+
+    .integracion-flecha {
+        transform: rotate(90deg);
+    }
 }
 
+
+/* =========================================================
+   RESPONSIVE MOVIL
+   ========================================================= */
 
 @media (max-width: 600px) {
 
@@ -733,7 +1254,6 @@ li {
         width: 100%;
 
         margin: 10px auto;
-
         padding: 10px;
     }
 
@@ -751,7 +1271,6 @@ li {
 
     .ruta {
         flex-direction: column;
-
         align-items: stretch;
     }
 
@@ -767,5 +1286,27 @@ li {
 
     .estado {
         width: 95%;
+    }
+
+    .semana8-card {
+        padding: 17px;
+    }
+
+    .flujo-elemento,
+    .evidencia-paso {
+        width: 95%;
+    }
+
+    .relacion-ontologica {
+        flex-direction: column;
+    }
+
+    .flecha-relacion {
+        transform: rotate(90deg);
+    }
+
+    .integracion-semana8,
+    .interpretacion-semana8 {
+        padding: 16px;
     }
 }

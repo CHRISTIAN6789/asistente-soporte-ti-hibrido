@@ -25,8 +25,9 @@
         <p class="subtitulo">
             Sistema Híbrido basado en Taxonomía IA,
             Sistema Experto, Recuperación de Información,
-            Clasificación Inteligente, A*, Minimax y
-            Representaciones del Reconocimiento.
+            Clasificación Inteligente, A*, Minimax,
+            Representaciones del Reconocimiento,
+            Redes Neuronales y Ontologías.
         </p>
 
         <div class="chat-banner">
@@ -77,7 +78,7 @@
 
 
         <!-- ================================================= -->
-        <!-- CATEGORÍAS -->
+        <!-- CATEGORIAS -->
         <!-- ================================================= -->
 
         <div class="section">
@@ -100,7 +101,7 @@
 
 
         <!-- ================================================= -->
-        <!-- CLASIFICACIÓN DEL TICKET -->
+        <!-- CLASIFICACION DEL TICKET -->
         <!-- ================================================= -->
 
         <div class="section">
@@ -148,9 +149,11 @@
                     <strong>Prioridad</strong>
 
                     <p>
+
                         <span class="badge">
                             {{ resultado.ticket.prioridad }}
                         </span>
+
                     </p>
 
                 </div>
@@ -191,7 +194,7 @@
 
 
         <!-- ================================================= -->
-        <!-- RECUPERACIÓN DE INFORMACIÓN -->
+        <!-- RECUPERACION DE INFORMACION -->
         <!-- ================================================= -->
 
         <div class="section">
@@ -215,7 +218,7 @@
 
 
         <!-- ================================================= -->
-        <!-- CLASIFICACIÓN INTELIGENTE -->
+        <!-- CLASIFICACION INTELIGENTE -->
         <!-- ================================================= -->
 
         <div class="section">
@@ -260,8 +263,8 @@
             <h2>🗺️ Ruta de Resolución A*</h2>
 
             <p>
-                Secuencia sugerida para alcanzar el estado de
-                resolución del incidente.
+                Secuencia sugerida para alcanzar el estado
+                de resolución del incidente.
             </p>
 
             <div class="ruta">
@@ -377,7 +380,7 @@
 
 
                 <!-- ============================================= -->
-                <!-- REPRESENTACIÓN NUMÉRICA -->
+                <!-- REPRESENTACION NUMERICA -->
                 <!-- ============================================= -->
 
                 <div class="representacion-card numerica">
@@ -432,16 +435,18 @@
 
 
                     <p class="explicacion">
+
                         Una distancia menor representa una mayor similitud
                         entre el incidente analizado y el patrón definido
                         para un incidente crítico.
+
                     </p>
 
                 </div>
 
 
                 <!-- ============================================= -->
-                <!-- REPRESENTACIÓN SIMBÓLICA -->
+                <!-- REPRESENTACION SIMBOLICA -->
                 <!-- ============================================= -->
 
                 <div class="representacion-card simbolica">
@@ -490,16 +495,18 @@
 
 
                     <p class="explicacion">
+
                         Los hechos reconocidos son evaluados mediante
                         reglas explícitas para producir una conclusión
                         comprensible y explicable.
+
                     </p>
 
                 </div>
 
 
                 <!-- ============================================= -->
-                <!-- AUTÓMATA -->
+                <!-- AUTOMATA -->
                 <!-- ============================================= -->
 
                 <div class="representacion-card automata">
@@ -566,14 +573,14 @@
 
 
                         <p class="explicacion">
+
                             El ticket recorrió correctamente las
                             transiciones definidas y alcanzó el estado
                             de aceptación RESUELTO.
+
                         </p>
 
-
                     {% else %}
-
 
                         <div class="automata-rechazado">
 
@@ -583,8 +590,10 @@
 
 
                         <p class="explicacion">
+
                             El ticket no alcanzó correctamente el estado
                             de aceptación definido en el autómata.
+
                         </p>
 
 
@@ -606,7 +615,7 @@
 
 
             <!-- ============================================= -->
-            <!-- COMPARACIÓN DE REPRESENTACIONES -->
+            <!-- COMPARACION SEMANA 7 -->
             <!-- ============================================= -->
 
             <div class="comparacion-representaciones">
@@ -616,19 +625,28 @@
                 </h3>
 
                 <p>
-                    <strong>Representación numérica:</strong>
+                    <strong>
+                        Representación numérica:
+                    </strong>
+
                     permite medir cuantitativamente la similitud
                     entre el incidente actual y un patrón conocido.
                 </p>
 
                 <p>
-                    <strong>Representación simbólica:</strong>
+                    <strong>
+                        Representación simbólica:
+                    </strong>
+
                     permite expresar las características del incidente
                     mediante hechos y obtener conclusiones mediante reglas.
                 </p>
 
                 <p>
-                    <strong>Autómata:</strong>
+                    <strong>
+                        Autómata:
+                    </strong>
+
                     permite reconocer si una secuencia de acciones
                     corresponde a un proceso válido de atención hasta
                     alcanzar el estado RESUELTO.
@@ -637,6 +655,617 @@
             </div>
 
         </div>
+
+        {% endif %}
+
+
+        <!-- ===================================================== -->
+        <!-- SEMANA 8 -->
+        <!-- RED NEURONAL + SQLITE + ONTOLOGIA -->
+        <!-- ===================================================== -->
+
+        {% if resultado.semana08 %}
+
+        <div class="section semana8">
+
+            <h2>
+                🧠 Semana 8 - Reconocimiento Inteligente
+            </h2>
+
+            <p class="descripcion-semana8">
+
+                El incidente es analizado mediante una red neuronal MLP,
+                se conserva evidencia mediante SQLite y la predicción
+                es interpretada mediante una ontología adaptada
+                al dominio de Soporte TI.
+
+            </p>
+
+
+            <!-- ============================================= -->
+            <!-- TARJETAS SEMANA 8 -->
+            <!-- ============================================= -->
+
+            <div class="semana8-grid">
+
+
+                <!-- ========================================= -->
+                <!-- RED NEURONAL -->
+                <!-- ========================================= -->
+
+                <div class="semana8-card red-neuronal">
+
+                    <h3>
+                        🧠 Red Neuronal MLP
+                    </h3>
+
+                    <p>
+
+                        La consulta se transforma mediante TF-IDF
+                        en características numéricas y posteriormente
+                        es procesada por la red neuronal para reconocer
+                        su categoría.
+
+                    </p>
+
+
+                    <div class="semana8-dato">
+
+                        <span>
+                            Categoría predicha
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana08.categoria_predicha }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana8-dato">
+
+                        <span>
+                            Confianza MLP
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana08.confianza_porcentaje }}%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana8-dato">
+
+                        <span>
+                            Accuracy del modelo
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana08.accuracy_porcentaje }}%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="archivo-semana8">
+
+                        <span>
+                            Modelo utilizado
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana08.modelo }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="archivo-semana8">
+
+                        <span>
+                            Vectorizador
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana08.vectorizador }}
+                        </strong>
+
+                    </div>
+
+
+                    <!-- FLUJO DE LA RED -->
+
+                    <div class="flujo-semana8">
+
+                        <div class="flujo-elemento">
+                            Consulta
+                        </div>
+
+                        <div class="flujo-flecha">
+                            ↓
+                        </div>
+
+                        <div class="flujo-elemento">
+                            TF-IDF
+                        </div>
+
+                        <div class="flujo-flecha">
+                            ↓
+                        </div>
+
+                        <div class="flujo-elemento destacado">
+                            MLP
+                        </div>
+
+                        <div class="flujo-flecha">
+                            ↓
+                        </div>
+
+                        <div class="flujo-elemento resultado-mlp">
+
+                            {{ resultado.semana08.categoria_predicha }}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ========================================= -->
+                <!-- SQLITE -->
+                <!-- ========================================= -->
+
+                <div class="semana8-card sqlite">
+
+                    <h3>
+                        🗄️ Evidencia SQLite
+                    </h3>
+
+                    <p>
+
+                        La base de datos conserva evidencia persistente
+                        de los incidentes utilizados por el sistema,
+                        incluyendo consultas, categorías y predicciones.
+
+                    </p>
+
+
+                    <div class="semana8-dato">
+
+                        <span>
+                            Base de datos
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana08.base_datos }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana8-dato">
+
+                        <span>
+                            Registros almacenados
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana08.registros }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="estado-correcto">
+
+                        ✅ Evidencia disponible
+
+                    </div>
+
+
+                    <!-- FLUJO SQLITE -->
+
+                    <div class="evidencia-flow">
+
+                        <div class="evidencia-paso">
+                            Consulta
+                        </div>
+
+                        <div class="evidencia-flecha">
+                            ↓
+                        </div>
+
+                        <div class="evidencia-paso">
+                            Categoría
+                        </div>
+
+                        <div class="evidencia-flecha">
+                            ↓
+                        </div>
+
+                        <div class="evidencia-paso">
+                            Predicción
+                        </div>
+
+                        <div class="evidencia-flecha">
+                            ↓
+                        </div>
+
+                        <div class="evidencia-paso evidencia-final">
+                            SQLite
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ========================================= -->
+                <!-- ONTOLOGIA -->
+                <!-- ========================================= -->
+
+                <div class="semana8-card ontologia">
+
+                    <h3>
+                        🕸️ Ontología de Soporte TI
+                    </h3>
+
+                    <p>
+
+                        La ontología proporciona significado a la
+                        predicción y relaciona la categoría reconocida
+                        con conceptos y áreas del dominio de Soporte TI.
+
+                    </p>
+
+
+                    <div class="semana8-dato">
+
+                        <span>
+                            Archivo GraphML
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana08.ontologia }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana8-dato">
+
+                        <span>
+                            Relaciones ontológicas
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana08.relaciones }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana8-dato">
+
+                        <span>
+                            Escalamiento sugerido
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana08.escalamiento }}
+                        </strong>
+
+                    </div>
+
+
+                    <!-- ===================================== -->
+                    <!-- RELACIONES ONTOLOGICAS -->
+                    <!-- ===================================== -->
+
+                    {% if resultado.semana08.relaciones_categoria %}
+
+                    <div class="relaciones-ontologicas">
+
+                        <h4>
+                            Relaciones asociadas
+                        </h4>
+
+
+                        {% for relacion in resultado.semana08.relaciones_categoria %}
+
+                            <div class="relacion-ontologica">
+
+                                <span class="nodo-origen">
+
+                                    {{ relacion.origen }}
+
+                                </span>
+
+                                <span class="flecha-relacion">
+                                    →
+                                </span>
+
+                                <span class="tipo-relacion">
+
+                                    {{ relacion.relacion }}
+
+                                </span>
+
+                                <span class="flecha-relacion">
+                                    →
+                                </span>
+
+                                <span class="nodo-destino">
+
+                                    {{ relacion.destino }}
+
+                                </span>
+
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                    {% else %}
+
+                        <div class="sin-relaciones">
+
+                            No se encontraron relaciones ontológicas
+                            adicionales para esta categoría.
+
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- FLUJO GENERAL SEMANA 8 -->
+            <!-- ============================================= -->
+
+            <div class="integracion-semana8">
+
+                <h3>
+                    🔄 Flujo completo de Semana 8
+                </h3>
+
+                <p>
+                    El modelo reconoce, SQLite registra
+                    y la ontología interpreta.
+                </p>
+
+
+                <div class="integracion-flow">
+
+
+                    <div class="integracion-paso">
+
+                        <span class="numero-paso">
+                            1
+                        </span>
+
+                        <strong>
+                            Consulta
+                        </strong>
+
+                        <small>
+                            Entrada
+                        </small>
+
+                    </div>
+
+
+                    <div class="integracion-flecha">
+                        →
+                    </div>
+
+
+                    <div class="integracion-paso">
+
+                        <span class="numero-paso">
+                            2
+                        </span>
+
+                        <strong>
+                            TF-IDF
+                        </strong>
+
+                        <small>
+                            Representa
+                        </small>
+
+                    </div>
+
+
+                    <div class="integracion-flecha">
+                        →
+                    </div>
+
+
+                    <div class="integracion-paso">
+
+                        <span class="numero-paso">
+                            3
+                        </span>
+
+                        <strong>
+                            MLP
+                        </strong>
+
+                        <small>
+                            Reconoce
+                        </small>
+
+                    </div>
+
+
+                    <div class="integracion-flecha">
+                        →
+                    </div>
+
+
+                    <div class="integracion-paso prediccion-paso">
+
+                        <span class="numero-paso">
+                            4
+                        </span>
+
+                        <strong>
+
+                            {{ resultado.semana08.categoria_predicha }}
+
+                        </strong>
+
+                        <small>
+                            Predicción
+                        </small>
+
+                    </div>
+
+
+                    <div class="integracion-flecha">
+                        →
+                    </div>
+
+
+                    <div class="integracion-paso">
+
+                        <span class="numero-paso">
+                            5
+                        </span>
+
+                        <strong>
+                            SQLite
+                        </strong>
+
+                        <small>
+                            Registra
+                        </small>
+
+                    </div>
+
+
+                    <div class="integracion-flecha">
+                        →
+                    </div>
+
+
+                    <div class="integracion-paso">
+
+                        <span class="numero-paso">
+                            6
+                        </span>
+
+                        <strong>
+                            Ontología
+                        </strong>
+
+                        <small>
+                            Interpreta
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- INTERPRETACION SEMANA 8 -->
+            <!-- ============================================= -->
+
+            <div class="interpretacion-semana8">
+
+                <h3>
+                    💡 Interpretación del Resultado
+                </h3>
+
+
+                <p>
+
+                    La red neuronal clasificó la consulta como
+
+                    <strong>
+                        {{ resultado.semana08.categoria_predicha }}
+                    </strong>
+
+                    con una confianza de
+
+                    <strong>
+                        {{ resultado.semana08.confianza_porcentaje }}%
+                    </strong>.
+
+                </p>
+
+
+                <p>
+
+                    El modelo presenta un accuracy de
+
+                    <strong>
+                        {{ resultado.semana08.accuracy_porcentaje }}%
+                    </strong>
+
+                    sobre el conjunto de prueba utilizado durante
+                    el entrenamiento.
+
+                </p>
+
+
+                <p>
+
+                    SQLite conserva
+
+                    <strong>
+                        {{ resultado.semana08.registros }}
+                    </strong>
+
+                    registros como evidencia persistente.
+
+                </p>
+
+
+                <p>
+
+                    La ontología contiene
+
+                    <strong>
+                        {{ resultado.semana08.relaciones }}
+                    </strong>
+
+                    relaciones que permiten interpretar la predicción
+                    dentro del dominio de Soporte TI.
+
+                </p>
+
+
+                {% if resultado.semana08.escalamiento != "No definido" %}
+
+                    <p>
+
+                        Según la ontología, el incidente puede
+                        escalarse a:
+
+                        <strong>
+                            {{ resultado.semana08.escalamiento }}
+                        </strong>
+
+                    </p>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <!-- CIERRA SEMANA 8 -->
 
         {% endif %}
 
@@ -686,6 +1315,10 @@
                 </li>
 
 
+                <!-- ========================================= -->
+                <!-- RESULTADOS SEMANA 7 -->
+                <!-- ========================================= -->
+
                 {% if resultado.representaciones %}
 
                     <li>
@@ -702,11 +1335,38 @@
 
                 {% endif %}
 
+
+                <!-- ========================================= -->
+                <!-- RESULTADOS SEMANA 8 -->
+                <!-- ========================================= -->
+
+                {% if resultado.semana08 %}
+
+                    <li>
+                        Red neuronal MLP ejecutada
+                    </li>
+
+                    <li>
+                        Predicción neuronal generada
+                    </li>
+
+                    <li>
+                        Evidencia SQLite disponible
+                    </li>
+
+                    <li>
+                        Ontología de Soporte TI consultada
+                    </li>
+
+                {% endif %}
+
             </ul>
 
         </div>
 
     </div>
+
+    <!-- CIERRA IF RESULTADO -->
 
     {% endif %}
 
