@@ -20,35 +20,91 @@
 
     <div class="card encabezado">
 
-        <h1>🤖 Asistente Inteligente de Soporte TI</h1>
+        <h1>
+            🤖 Asistente Inteligente de Soporte TI
+        </h1>
 
         <p class="subtitulo">
             Sistema Híbrido basado en Taxonomía IA,
             Sistema Experto, Recuperación de Información,
             Clasificación Inteligente, A*, Minimax,
             Representaciones del Reconocimiento,
-            Redes Neuronales y Ontologías.
+            Redes Neuronales, Ontologías y
+            Análisis de Evidencia Visual.
         </p>
 
         <div class="chat-banner">
             Hola, soy tu asistente inteligente de soporte TI.
-            Describe el incidente que deseas analizar.
+            Describe el incidente que deseas analizar y,
+            opcionalmente, adjunta una imagen como evidencia.
         </div>
 
-        <form method="POST">
 
-            <input
-                type="text"
-                name="consulta"
-                placeholder="Describe tu incidente tecnológico..."
-                required
+        <!-- ================================================= -->
+        <!-- FORMULARIO -->
+        <!-- ================================================= -->
+
+        <form
+            method="POST"
+            enctype="multipart/form-data"
+            class="form-incidente"
+        >
+
+            <div class="campo-consulta">
+
+                <label for="consulta">
+                    Describe el incidente
+                </label>
+
+                <input
+                    type="text"
+                    id="consulta"
+                    name="consulta"
+                    placeholder="Describe tu incidente tecnológico..."
+                    required
+                >
+
+            </div>
+
+
+            <div class="campo-imagen">
+
+                <label for="imagen">
+                    📎 Evidencia visual del incidente
+                </label>
+
+                <input
+                    type="file"
+                    id="imagen"
+                    name="imagen"
+                    accept=".png,.jpg,.jpeg,image/png,image/jpeg"
+                >
+
+                <small>
+                    Opcional. Adjunta una imagen PNG, JPG o JPEG
+                    relacionada con el incidente.
+                </small>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="boton-analizar"
             >
-
-            <button type="submit">
-                Analizar
+                Analizar incidente
             </button>
 
         </form>
+
+
+        {% if error_imagen %}
+
+        <div class="mensaje-error-imagen">
+            ⚠️ {{ error_imagen }}
+        </div>
+
+        {% endif %}
 
     </div>
 
@@ -68,7 +124,9 @@
 
         <div class="section">
 
-            <h2>📋 Consulta</h2>
+            <h2>
+                📋 Consulta
+            </h2>
 
             <p class="consulta-texto">
                 {{ resultado.consulta }}
@@ -83,15 +141,17 @@
 
         <div class="section">
 
-            <h2>📂 Categorías Detectadas</h2>
+            <h2>
+                📂 Categorías Detectadas
+            </h2>
 
             <ul>
 
                 {% for categoria in resultado.categorias %}
 
-                    <li>
-                        {{ categoria }}
-                    </li>
+                <li>
+                    {{ categoria }}
+                </li>
 
                 {% endfor %}
 
@@ -106,14 +166,18 @@
 
         <div class="section">
 
-            <h2>🎫 Clasificación del Ticket</h2>
+            <h2>
+                🎫 Clasificación del Ticket
+            </h2>
 
             <div class="info-grid">
 
 
                 <div class="info-box">
 
-                    <strong>Tipo</strong>
+                    <strong>
+                        Tipo
+                    </strong>
 
                     <p>
                         {{ resultado.ticket.tipo }}
@@ -124,7 +188,9 @@
 
                 <div class="info-box">
 
-                    <strong>Criticidad</strong>
+                    <strong>
+                        Criticidad
+                    </strong>
 
                     <p>
                         {{ resultado.ticket.criticidad }}
@@ -135,7 +201,9 @@
 
                 <div class="info-box">
 
-                    <strong>Impacto</strong>
+                    <strong>
+                        Impacto
+                    </strong>
 
                     <p>
                         {{ resultado.ticket.impacto }}
@@ -146,14 +214,14 @@
 
                 <div class="info-box">
 
-                    <strong>Prioridad</strong>
+                    <strong>
+                        Prioridad
+                    </strong>
 
                     <p>
-
                         <span class="badge">
                             {{ resultado.ticket.prioridad }}
                         </span>
-
                     </p>
 
                 </div>
@@ -161,7 +229,9 @@
 
                 <div class="info-box escalamiento-box">
 
-                    <strong>Escalamiento</strong>
+                    <strong>
+                        Escalamiento
+                    </strong>
 
                     <p>
                         {{ resultado.ticket.escalamiento }}
@@ -180,10 +250,14 @@
 
         <div class="section">
 
-            <h2>🧠 Sistema Experto</h2>
+            <h2>
+                🧠 Sistema Experto
+            </h2>
 
             <p>
-                <strong>Regla activada:</strong>
+                <strong>
+                    Regla activada:
+                </strong>
             </p>
 
             <p class="respuesta-destacada">
@@ -199,10 +273,14 @@
 
         <div class="section">
 
-            <h2>📚 Recuperación de Información</h2>
+            <h2>
+                📚 Recuperación de Información
+            </h2>
 
             <p>
-                <strong>Información recuperada:</strong>
+                <strong>
+                    Información recuperada:
+                </strong>
             </p>
 
             <p>
@@ -210,7 +288,10 @@
             </p>
 
             <p>
-                <strong>Similitud TF-IDF:</strong>
+                <strong>
+                    Similitud TF-IDF:
+                </strong>
+
                 {{ resultado.similitud }}
             </p>
 
@@ -223,14 +304,18 @@
 
         <div class="section">
 
-            <h2>🏷️ Clasificación Inteligente</h2>
+            <h2>
+                🏷️ Clasificación Inteligente
+            </h2>
 
             <div class="clasificacion-grid">
 
 
                 <div class="info-box">
 
-                    <strong>Categoría predicha</strong>
+                    <strong>
+                        Categoría predicha
+                    </strong>
 
                     <p>
                         {{ resultado.categoria_predicha }}
@@ -241,7 +326,9 @@
 
                 <div class="info-box">
 
-                    <strong>Similitud</strong>
+                    <strong>
+                        Similitud
+                    </strong>
 
                     <p>
                         {{ resultado.similitud_clase }}
@@ -255,12 +342,14 @@
 
 
         <!-- ================================================= -->
-        <!-- A* -->
+        <!-- A STAR -->
         <!-- ================================================= -->
 
         <div class="section">
 
-            <h2>🗺️ Ruta de Resolución A*</h2>
+            <h2>
+                🗺️ Ruta de Resolución A*
+            </h2>
 
             <p>
                 Secuencia sugerida para alcanzar el estado
@@ -271,17 +360,17 @@
 
                 {% for paso in resultado.ruta %}
 
-                    <div class="paso">
-                        {{ paso }}
-                    </div>
+                <div class="paso">
+                    {{ paso }}
+                </div>
 
-                    {% if not loop.last %}
+                {% if not loop.last %}
 
-                        <div class="flecha-ruta">
-                            →
-                        </div>
+                <div class="flecha-ruta">
+                    →
+                </div>
 
-                    {% endif %}
+                {% endif %}
 
                 {% endfor %}
 
@@ -296,7 +385,9 @@
 
         <div class="section">
 
-            <h2>⚖️ Priorización Minimax</h2>
+            <h2>
+                ⚖️ Priorización Minimax
+            </h2>
 
             <p>
                 Comparación conceptual de la utilidad operativa
@@ -308,7 +399,9 @@
 
                 <div class="decision">
 
-                    <h3>Servidor</h3>
+                    <h3>
+                        Servidor
+                    </h3>
 
                     <span class="valor">
                         10
@@ -323,7 +416,9 @@
 
                 <div class="decision">
 
-                    <h3>VPN</h3>
+                    <h3>
+                        VPN
+                    </h3>
 
                     <span class="valor">
                         6
@@ -338,7 +433,9 @@
 
                 <div class="decision">
 
-                    <h3>Impresora</h3>
+                    <h3>
+                        Impresora
+                    </h3>
 
                     <span class="valor">
                         2
@@ -357,7 +454,6 @@
 
         <!-- ===================================================== -->
         <!-- SEMANA 7 -->
-        <!-- REPRESENTACIONES DEL RECONOCIMIENTO -->
         <!-- ===================================================== -->
 
         {% if resultado.representaciones %}
@@ -394,7 +490,6 @@
                         numérico de características.
                     </p>
 
-
                     <p>
                         <strong>
                             Vector del incidente
@@ -402,9 +497,7 @@
                     </p>
 
                     <div class="vector-box">
-
                         {{ resultado.representaciones.numerica.vector }}
-
                     </div>
 
 
@@ -415,9 +508,7 @@
                     </p>
 
                     <div class="vector-box referencia">
-
                         {{ resultado.representaciones.numerica.referencia }}
-
                     </div>
 
 
@@ -428,18 +519,14 @@
                     </p>
 
                     <div class="distancia">
-
                         {{ resultado.representaciones.numerica.distancia }}
-
                     </div>
 
 
                     <p class="explicacion">
-
-                        Una distancia menor representa una mayor similitud
-                        entre el incidente analizado y el patrón definido
-                        para un incidente crítico.
-
+                        Una distancia menor representa una mayor
+                        similitud entre el incidente analizado y
+                        el patrón definido para un incidente crítico.
                     </p>
 
                 </div>
@@ -460,7 +547,6 @@
                         en hechos y conceptos explícitos.
                     </p>
 
-
                     <p>
                         <strong>
                             Hechos reconocidos
@@ -472,9 +558,9 @@
 
                         {% for hecho in resultado.representaciones.simbolica.hechos %}
 
-                            <span class="hecho">
-                                {{ hecho }}
-                            </span>
+                        <span class="hecho">
+                            {{ hecho }}
+                        </span>
 
                         {% endfor %}
 
@@ -495,11 +581,9 @@
 
 
                     <p class="explicacion">
-
                         Los hechos reconocidos son evaluados mediante
                         reglas explícitas para producir una conclusión
                         comprensible y explicable.
-
                     </p>
 
                 </div>
@@ -520,7 +604,6 @@
                         mediante estados y transiciones válidas.
                     </p>
 
-
                     <p>
                         <strong>
                             Recorrido de estados
@@ -532,20 +615,17 @@
 
                         {% for estado in resultado.representaciones.automata.recorrido %}
 
-                            <div class="estado">
+                        <div class="estado">
+                            {{ estado }}
+                        </div>
 
-                                {{ estado }}
+                        {% if not loop.last %}
 
-                            </div>
+                        <div class="flecha-automata">
+                            ↓
+                        </div>
 
-
-                            {% if not loop.last %}
-
-                                <div class="flecha-automata">
-                                    ↓
-                                </div>
-
-                            {% endif %}
+                        {% endif %}
 
                         {% endfor %}
 
@@ -565,47 +645,34 @@
 
                     {% if resultado.representaciones.automata.aceptado %}
 
-                        <div class="automata-aceptado">
+                    <div class="automata-aceptado">
+                        ✅ Secuencia aceptada
+                    </div>
 
-                            ✅ Secuencia aceptada
-
-                        </div>
-
-
-                        <p class="explicacion">
-
-                            El ticket recorrió correctamente las
-                            transiciones definidas y alcanzó el estado
-                            de aceptación RESUELTO.
-
-                        </p>
+                    <p class="explicacion">
+                        El ticket recorrió correctamente las
+                        transiciones definidas y alcanzó el estado
+                        de aceptación RESUELTO.
+                    </p>
 
                     {% else %}
 
-                        <div class="automata-rechazado">
+                    <div class="automata-rechazado">
+                        ❌ Secuencia rechazada
+                    </div>
 
-                            ❌ Secuencia rechazada
+                    <p class="explicacion">
+                        El ticket no alcanzó correctamente el estado
+                        de aceptación definido en el autómata.
+                    </p>
 
-                        </div>
+                    {% if resultado.representaciones.automata.error %}
 
+                    <div class="mensaje-error">
+                        {{ resultado.representaciones.automata.error }}
+                    </div>
 
-                        <p class="explicacion">
-
-                            El ticket no alcanzó correctamente el estado
-                            de aceptación definido en el autómata.
-
-                        </p>
-
-
-                        {% if resultado.representaciones.automata.error %}
-
-                            <div class="mensaje-error">
-
-                                {{ resultado.representaciones.automata.error }}
-
-                            </div>
-
-                        {% endif %}
+                    {% endif %}
 
                     {% endif %}
 
@@ -661,7 +728,6 @@
 
         <!-- ===================================================== -->
         <!-- SEMANA 8 -->
-        <!-- RED NEURONAL + SQLITE + ONTOLOGIA -->
         <!-- ===================================================== -->
 
         {% if resultado.semana08 %}
@@ -673,25 +739,19 @@
             </h2>
 
             <p class="descripcion-semana8">
-
                 El incidente es analizado mediante una red neuronal MLP,
                 se conserva evidencia mediante SQLite y la predicción
                 es interpretada mediante una ontología adaptada
                 al dominio de Soporte TI.
-
             </p>
 
-
-            <!-- ============================================= -->
-            <!-- TARJETAS SEMANA 8 -->
-            <!-- ============================================= -->
 
             <div class="semana8-grid">
 
 
-                <!-- ========================================= -->
+                <!-- ============================================= -->
                 <!-- RED NEURONAL -->
-                <!-- ========================================= -->
+                <!-- ============================================= -->
 
                 <div class="semana8-card red-neuronal">
 
@@ -700,12 +760,10 @@
                     </h3>
 
                     <p>
-
                         La consulta se transforma mediante TF-IDF
                         en características numéricas y posteriormente
                         es procesada por la red neuronal para reconocer
                         su categoría.
-
                     </p>
 
 
@@ -774,8 +832,6 @@
                     </div>
 
 
-                    <!-- FLUJO DE LA RED -->
-
                     <div class="flujo-semana8">
 
                         <div class="flujo-elemento">
@@ -803,9 +859,7 @@
                         </div>
 
                         <div class="flujo-elemento resultado-mlp">
-
                             {{ resultado.semana08.categoria_predicha }}
-
                         </div>
 
                     </div>
@@ -813,9 +867,9 @@
                 </div>
 
 
-                <!-- ========================================= -->
+                <!-- ============================================= -->
                 <!-- SQLITE -->
-                <!-- ========================================= -->
+                <!-- ============================================= -->
 
                 <div class="semana8-card sqlite">
 
@@ -824,11 +878,9 @@
                     </h3>
 
                     <p>
-
                         La base de datos conserva evidencia persistente
                         de los incidentes utilizados por el sistema,
                         incluyendo consultas, categorías y predicciones.
-
                     </p>
 
 
@@ -859,13 +911,9 @@
 
 
                     <div class="estado-correcto">
-
                         ✅ Evidencia disponible
-
                     </div>
 
-
-                    <!-- FLUJO SQLITE -->
 
                     <div class="evidencia-flow">
 
@@ -902,9 +950,9 @@
                 </div>
 
 
-                <!-- ========================================= -->
+                <!-- ============================================= -->
                 <!-- ONTOLOGIA -->
-                <!-- ========================================= -->
+                <!-- ============================================= -->
 
                 <div class="semana8-card ontologia">
 
@@ -913,11 +961,9 @@
                     </h3>
 
                     <p>
-
                         La ontología proporciona significado a la
                         predicción y relaciona la categoría reconocida
                         con conceptos y áreas del dominio de Soporte TI.
-
                     </p>
 
 
@@ -960,10 +1006,6 @@
                     </div>
 
 
-                    <!-- ===================================== -->
-                    <!-- RELACIONES ONTOLOGICAS -->
-                    <!-- ===================================== -->
-
                     {% if resultado.semana08.relaciones_categoria %}
 
                     <div class="relaciones-ontologicas">
@@ -972,38 +1014,31 @@
                             Relaciones asociadas
                         </h4>
 
-
                         {% for relacion in resultado.semana08.relaciones_categoria %}
 
-                            <div class="relacion-ontologica">
+                        <div class="relacion-ontologica">
 
-                                <span class="nodo-origen">
+                            <span class="nodo-origen">
+                                {{ relacion.origen }}
+                            </span>
 
-                                    {{ relacion.origen }}
+                            <span class="flecha-relacion">
+                                →
+                            </span>
 
-                                </span>
+                            <span class="tipo-relacion">
+                                {{ relacion.relacion }}
+                            </span>
 
-                                <span class="flecha-relacion">
-                                    →
-                                </span>
+                            <span class="flecha-relacion">
+                                →
+                            </span>
 
-                                <span class="tipo-relacion">
+                            <span class="nodo-destino">
+                                {{ relacion.destino }}
+                            </span>
 
-                                    {{ relacion.relacion }}
-
-                                </span>
-
-                                <span class="flecha-relacion">
-                                    →
-                                </span>
-
-                                <span class="nodo-destino">
-
-                                    {{ relacion.destino }}
-
-                                </span>
-
-                            </div>
+                        </div>
 
                         {% endfor %}
 
@@ -1011,12 +1046,10 @@
 
                     {% else %}
 
-                        <div class="sin-relaciones">
-
-                            No se encontraron relaciones ontológicas
-                            adicionales para esta categoría.
-
-                        </div>
+                    <div class="sin-relaciones">
+                        No se encontraron relaciones ontológicas
+                        adicionales para esta categoría.
+                    </div>
 
                     {% endif %}
 
@@ -1026,7 +1059,7 @@
 
 
             <!-- ============================================= -->
-            <!-- FLUJO GENERAL SEMANA 8 -->
+            <!-- FLUJO COMPLETO SEMANA 8 -->
             <!-- ============================================= -->
 
             <div class="integracion-semana8">
@@ -1039,7 +1072,6 @@
                     El modelo reconoce, SQLite registra
                     y la ontología interpreta.
                 </p>
-
 
                 <div class="integracion-flow">
 
@@ -1117,9 +1149,7 @@
                         </span>
 
                         <strong>
-
                             {{ resultado.semana08.categoria_predicha }}
-
                         </strong>
 
                         <small>
@@ -1189,7 +1219,6 @@
 
 
                 <p>
-
                     La red neuronal clasificó la consulta como
 
                     <strong>
@@ -1201,12 +1230,10 @@
                     <strong>
                         {{ resultado.semana08.confianza_porcentaje }}%
                     </strong>.
-
                 </p>
 
 
                 <p>
-
                     El modelo presenta un accuracy de
 
                     <strong>
@@ -1215,12 +1242,10 @@
 
                     sobre el conjunto de prueba utilizado durante
                     el entrenamiento.
-
                 </p>
 
 
                 <p>
-
                     SQLite conserva
 
                     <strong>
@@ -1228,12 +1253,10 @@
                     </strong>
 
                     registros como evidencia persistente.
-
                 </p>
 
 
                 <p>
-
                     La ontología contiene
 
                     <strong>
@@ -1242,22 +1265,19 @@
 
                     relaciones que permiten interpretar la predicción
                     dentro del dominio de Soporte TI.
-
                 </p>
 
 
                 {% if resultado.semana08.escalamiento != "No definido" %}
 
-                    <p>
+                <p>
+                    Según la ontología, el incidente puede
+                    escalarse a:
 
-                        Según la ontología, el incidente puede
-                        escalarse a:
-
-                        <strong>
-                            {{ resultado.semana08.escalamiento }}
-                        </strong>
-
-                    </p>
+                    <strong>
+                        {{ resultado.semana08.escalamiento }}
+                    </strong>
+                </p>
 
                 {% endif %}
 
@@ -1265,7 +1285,741 @@
 
         </div>
 
-        <!-- CIERRA SEMANA 8 -->
+        {% endif %}
+
+
+        <!-- ===================================================== -->
+        <!-- SEMANA 9 -->
+        <!-- ANALISIS DE EVIDENCIA VISUAL -->
+        <!-- ===================================================== -->
+
+        {% if resultado.semana09 %}
+
+        <div class="section semana9">
+
+            <h2>
+                👁️ Semana 9 - Análisis de Evidencia Visual
+            </h2>
+
+            <p class="descripcion-semana9">
+                La imagen adjunta al incidente es procesada como
+                evidencia visual mediante extracción de características,
+                detección de contornos Canny, segmentación automática
+                mediante Otsu y análisis de regiones conectadas.
+            </p>
+
+
+            <!-- ============================================= -->
+            <!-- TARJETAS SEMANA 9 -->
+            <!-- ============================================= -->
+
+            <div class="semana9-grid">
+
+
+                <!-- ========================================= -->
+                <!-- EVIDENCIA VISUAL -->
+                <!-- ========================================= -->
+
+                <div class="semana9-card imagen-ti">
+
+                    <h3>
+                        🖼️ Evidencia Visual
+                    </h3>
+
+                    <p>
+                        Características generales obtenidas de la
+                        imagen asociada al incidente tecnológico.
+                    </p>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Archivo
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.imagen }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Tipo
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.tipo_imagen }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Dimensiones
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.ancho }}
+                            ×
+                            {{ resultado.semana09.alto }}
+                            píxeles
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Píxeles totales
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.pixeles_totales }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Intensidad mínima
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.intensidad_minima }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Intensidad máxima
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.intensidad_maxima }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Intensidad media
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.intensidad_media }}
+                        </strong>
+
+                    </div>
+
+
+                    <!-- ===================================== -->
+                    <!-- IMAGEN ADJUNTA CORREGIDA -->
+                    <!-- ===================================== -->
+
+                    {% if resultado.semana09.imagen_url %}
+
+                    <div class="imagen-original-container">
+
+                        <h4>
+                            Evidencia adjunta
+                        </h4>
+
+                        {{ resultado.semana09.imagen_url }}
+
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- ========================================= -->
+                <!-- CANNY -->
+                <!-- ========================================= -->
+
+                <div class="semana9-card canny-ti">
+
+                    <h3>
+                        🔎 Detección de Contornos
+                    </h3>
+
+                    <p>
+                        Canny identifica cambios de intensidad que
+                        pueden representar límites y estructuras
+                        visuales presentes en la evidencia.
+                    </p>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Método
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.metodo_bordes }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Sigma
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.sigma }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Píxeles de borde
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.pixeles_borde }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Cobertura de bordes
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.porcentaje_borde }}%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="flujo-vision">
+
+                        <div class="vision-paso">
+                            Imagen
+                        </div>
+
+                        <div class="vision-flecha">
+                            ↓
+                        </div>
+
+                        <div class="vision-paso vision-canny">
+                            Canny
+                        </div>
+
+                        <div class="vision-flecha">
+                            ↓
+                        </div>
+
+                        <div class="vision-paso vision-resultado">
+                            Contornos
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ========================================= -->
+                <!-- OTSU -->
+                <!-- ========================================= -->
+
+                <div class="semana9-card otsu-ti">
+
+                    <h3>
+                        ◐ Segmentación y Regiones
+                    </h3>
+
+                    <p>
+                        Otsu calcula automáticamente un umbral
+                        para crear una máscara binaria y posteriormente
+                        analizar regiones conectadas.
+                    </p>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Método
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.metodo_segmentacion }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Umbral Otsu
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.umbral_otsu }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Píxeles objeto
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.pixeles_objeto }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Píxeles fondo
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.pixeles_fondo }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Cobertura objeto
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.porcentaje_objeto }}%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Cobertura fondo
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.porcentaje_fondo }}%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana9-dato">
+
+                        <span>
+                            Regiones detectadas
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.regiones }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="semana9-dato region-destacada">
+
+                        <span>
+                            Regiones relevantes
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.regiones_significativas }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- REGIONES CONECTADAS -->
+            <!-- ============================================= -->
+
+            <div class="regiones-semana9">
+
+                <h3>
+                    🧩 Análisis de Regiones Conectadas
+                </h3>
+
+                <p>
+                    No todas las regiones detectadas representan
+                    objetos independientes. Algunos componentes pequeños
+                    pueden corresponder a detalles, fragmentos o ruido
+                    visual. El filtro por área permite distinguir las
+                    regiones consideradas más significativas.
+                </p>
+
+
+                <div class="regiones-grid">
+
+
+                    <div class="region-info">
+
+                        <span>
+                            Regiones totales
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.regiones }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="region-info">
+
+                        <span>
+                            Regiones relevantes
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.regiones_significativas }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="region-info">
+
+                        <span>
+                            Área mínima
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.area_minima_filtro }}
+                            px
+                        </strong>
+
+                    </div>
+
+
+                    <div class="region-info">
+
+                        <span>
+                            Región mayor
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.area_region_mayor }}
+                            px
+                        </strong>
+
+                    </div>
+
+
+                    <div class="region-info">
+
+                        <span>
+                            Región menor
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.area_region_menor }}
+                            px
+                        </strong>
+
+                    </div>
+
+
+                    <div class="region-info">
+
+                        <span>
+                            Área promedio
+                        </span>
+
+                        <strong>
+                            {{ resultado.semana09.area_promedio }}
+                            px
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- FLUJO SEMANA 9 -->
+            <!-- ============================================= -->
+
+            <div class="integracion-semana9">
+
+                <h3>
+                    🔄 Flujo de Procesamiento Visual
+                </h3>
+
+                <p>
+                    La imagen adjunta pasa por distintas etapas
+                    hasta convertirse en evidencia visual estructurada
+                    para el Asistente Inteligente de Soporte TI.
+                </p>
+
+
+                <div class="integracion-vision-flow">
+
+
+                    <div class="integracion-vision-paso">
+
+                        <span class="numero-vision">
+                            1
+                        </span>
+
+                        <strong>
+                            Evidencia
+                        </strong>
+
+                        <small>
+                            Entrada
+                        </small>
+
+                    </div>
+
+
+                    <div class="integracion-vision-flecha">
+                        →
+                    </div>
+
+
+                    <div class="integracion-vision-paso">
+
+                        <span class="numero-vision">
+                            2
+                        </span>
+
+                        <strong>
+                            Grises
+                        </strong>
+
+                        <small>
+                            Preprocesa
+                        </small>
+
+                    </div>
+
+
+                    <div class="integracion-vision-flecha">
+                        →
+                    </div>
+
+
+                    <div class="integracion-vision-paso">
+
+                        <span class="numero-vision">
+                            3
+                        </span>
+
+                        <strong>
+                            Canny
+                        </strong>
+
+                        <small>
+                            Contornos
+                        </small>
+
+                    </div>
+
+
+                    <div class="integracion-vision-flecha">
+                        →
+                    </div>
+
+
+                    <div class="integracion-vision-paso">
+
+                        <span class="numero-vision">
+                            4
+                        </span>
+
+                        <strong>
+                            Otsu
+                        </strong>
+
+                        <small>
+                            Segmenta
+                        </small>
+
+                    </div>
+
+
+                    <div class="integracion-vision-flecha">
+                        →
+                    </div>
+
+
+                    <div class="integracion-vision-paso">
+
+                        <span class="numero-vision">
+                            5
+                        </span>
+
+                        <strong>
+                            Máscara
+                        </strong>
+
+                        <small>
+                            Separa
+                        </small>
+
+                    </div>
+
+
+                    <div class="integracion-vision-flecha">
+                        →
+                    </div>
+
+
+                    <div class="integracion-vision-paso">
+
+                        <span class="numero-vision">
+                            6
+                        </span>
+
+                        <strong>
+                            Regiones
+                        </strong>
+
+                        <small>
+                            Estructura
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- INTERPRETACION SEMANA 9 -->
+            <!-- ============================================= -->
+
+            <div class="interpretacion-semana9">
+
+                <h3>
+                    💡 Interpretación para Soporte TI
+                </h3>
+
+
+                <p>
+                    La imagen adjunta fue incorporada como una segunda
+                    fuente de evidencia para complementar la descripción
+                    textual del incidente.
+                </p>
+
+
+                <p>
+                    Canny identificó
+
+                    <strong>
+                        {{ resultado.semana09.pixeles_borde }}
+                    </strong>
+
+                    píxeles asociados a contornos, equivalentes al
+
+                    <strong>
+                        {{ resultado.semana09.porcentaje_borde }}%
+                    </strong>
+
+                    de la imagen procesada.
+                </p>
+
+
+                <p>
+                    Otsu calculó automáticamente un umbral de
+
+                    <strong>
+                        {{ resultado.semana09.umbral_otsu }}
+                    </strong>.
+
+                    La máscara clasificó
+
+                    <strong>
+                        {{ resultado.semana09.porcentaje_objeto }}%
+                    </strong>
+
+                    de los píxeles dentro del grupo considerado como
+                    objeto y
+
+                    <strong>
+                        {{ resultado.semana09.porcentaje_fondo }}%
+                    </strong>
+
+                    como fondo.
+                </p>
+
+
+                <p>
+                    Se detectaron
+
+                    <strong>
+                        {{ resultado.semana09.regiones }}
+                    </strong>
+
+                    regiones conectadas, de las cuales
+
+                    <strong>
+                        {{ resultado.semana09.regiones_significativas }}
+                    </strong>
+
+                    superaron el criterio mínimo de
+
+                    <strong>
+                        {{ resultado.semana09.area_minima_filtro }}
+                        píxeles
+                    </strong>.
+                </p>
+
+
+                <p>
+                    Esta etapa no identifica automáticamente qué
+                    dispositivo aparece en la imagen ni diagnostica
+                    directamente la causa de la falla. Su objetivo
+                    es transformar la imagen en evidencia visual
+                    estructurada que pueda apoyar futuras etapas de
+                    clasificación, validación y trazabilidad.
+                </p>
+
+            </div>
+
+        </div>
 
         {% endif %}
 
@@ -1315,48 +2069,61 @@
                 </li>
 
 
-                <!-- ========================================= -->
-                <!-- RESULTADOS SEMANA 7 -->
-                <!-- ========================================= -->
-
                 {% if resultado.representaciones %}
 
-                    <li>
-                        Representación numérica generada
-                    </li>
+                <li>
+                    Representación numérica generada
+                </li>
 
-                    <li>
-                        Representación simbólica generada
-                    </li>
+                <li>
+                    Representación simbólica generada
+                </li>
 
-                    <li>
-                        Autómata del ticket ejecutado
-                    </li>
+                <li>
+                    Autómata del ticket ejecutado
+                </li>
 
                 {% endif %}
 
 
-                <!-- ========================================= -->
-                <!-- RESULTADOS SEMANA 8 -->
-                <!-- ========================================= -->
-
                 {% if resultado.semana08 %}
 
-                    <li>
-                        Red neuronal MLP ejecutada
-                    </li>
+                <li>
+                    Red neuronal MLP ejecutada
+                </li>
 
-                    <li>
-                        Predicción neuronal generada
-                    </li>
+                <li>
+                    Predicción neuronal generada
+                </li>
 
-                    <li>
-                        Evidencia SQLite disponible
-                    </li>
+                <li>
+                    Evidencia SQLite disponible
+                </li>
 
-                    <li>
-                        Ontología de Soporte TI consultada
-                    </li>
+                <li>
+                    Ontología de Soporte TI consultada
+                </li>
+
+                {% endif %}
+
+
+                {% if resultado.semana09 %}
+
+                <li>
+                    Evidencia visual del incidente procesada
+                </li>
+
+                <li>
+                    Detección de contornos Canny realizada
+                </li>
+
+                <li>
+                    Segmentación Otsu generada
+                </li>
+
+                <li>
+                    Regiones conectadas analizadas
+                </li>
 
                 {% endif %}
 
@@ -1365,8 +2132,6 @@
         </div>
 
     </div>
-
-    <!-- CIERRA IF RESULTADO -->
 
     {% endif %}
 

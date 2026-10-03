@@ -35,14 +35,11 @@ body {
    ========================================================= */
 
 .card {
-    margin-bottom: 25px;
     padding: 28px;
-
+    margin-bottom: 25px;
     background: #ffffff;
-
     border: 1px solid #e2e8f0;
     border-radius: 16px;
-
     box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
 }
 
@@ -78,12 +75,9 @@ h1 {
     max-width: 900px;
     margin: 20px auto;
     padding: 16px;
-
     text-align: left;
-
-    background: #e8f4ff;
     color: #334155;
-
+    background: #e8f4ff;
     border-left: 5px solid #0078d4;
     border-radius: 9px;
 }
@@ -96,49 +90,56 @@ h1 {
 form {
     max-width: 900px;
     margin: 22px auto 0;
+}
 
-    display: flex;
-    gap: 10px;
+.form-incidente {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    text-align: left;
+}
+
+.campo-consulta,
+.campo-imagen {
+    width: 100%;
+}
+
+.campo-consulta label,
+.campo-imagen label {
+    display: block;
+    margin-bottom: 8px;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 input {
-    flex: 1;
-
+    width: 100%;
     padding: 14px 16px;
-
     font-family: inherit;
     font-size: 15px;
-
     color: #1e293b;
     background: #ffffff;
-
     border: 1px solid #cbd5e1;
     border-radius: 10px;
 }
 
 input:focus {
     outline: none;
-
     border-color: #0078d4;
-
     box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.12);
 }
 
 button {
     padding: 14px 26px;
-
     font-family: inherit;
     font-size: 15px;
     font-weight: 600;
-
     color: #ffffff;
     background: #0078d4;
-
     border: none;
     border-radius: 10px;
-
     cursor: pointer;
-
     transition: 0.2s ease;
 }
 
@@ -147,17 +148,82 @@ button:hover {
     transform: translateY(-1px);
 }
 
+.boton-analizar {
+    width: 100%;
+}
+
 
 /* =========================================================
-   SECCIONES
+   CARGA DE EVIDENCIA VISUAL
+   ========================================================= */
+
+.campo-imagen {
+    padding: 16px;
+    background: #f8fafc;
+    border: 1px dashed #94a3b8;
+    border-radius: 10px;
+    transition: 0.2s ease;
+}
+
+.campo-imagen:hover {
+    background: #f0f9ff;
+    border-color: #0284c7;
+}
+
+.campo-imagen input[type="file"] {
+    width: 100%;
+    margin-top: 4px;
+    padding: 10px;
+    color: #475569;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+.campo-imagen input[type="file"]::file-selector-button {
+    margin-right: 12px;
+    padding: 9px 14px;
+    font-family: inherit;
+    font-weight: 600;
+    color: #ffffff;
+    background: #0078d4;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.campo-imagen input[type="file"]::file-selector-button:hover {
+    background: #005fa3;
+}
+
+
+/* =========================================================
+   ERROR DE IMAGEN
+   ========================================================= */
+
+.mensaje-error-imagen {
+    max-width: 900px;
+    margin: 15px auto 0;
+    padding: 12px 14px;
+    text-align: left;
+    color: #991b1b;
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    border-left: 5px solid #dc2626;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SECCIONES DE RESULTADOS
    ========================================================= */
 
 .section {
     margin-top: 22px;
     padding: 22px;
-
     background: #f8fafc;
-
     border: 1px solid #e2e8f0;
     border-left: 5px solid #0078d4;
     border-radius: 11px;
@@ -165,9 +231,7 @@ button:hover {
 
 .section h2 {
     margin: 0 0 17px;
-
     color: #0078d4;
-
     font-size: 22px;
 }
 
@@ -177,21 +241,16 @@ button:hover {
 
 .consulta-texto {
     margin-bottom: 0;
-
     color: #334155;
-
     font-size: 18px;
     font-weight: 600;
 }
 
 .respuesta-destacada {
     padding: 13px 15px;
-
     background: #eff6ff;
     color: #1d4ed8;
-
     border-radius: 8px;
-
     font-weight: 600;
 }
 
@@ -203,34 +262,26 @@ button:hover {
 .info-grid,
 .clasificacion-grid {
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 15px;
 }
 
 .info-box {
     padding: 16px;
-
     background: #ffffff;
-
     border: 1px solid #dbe3ec;
     border-radius: 10px;
 }
 
 .info-box strong {
     display: block;
-
     color: #475569;
-
     font-size: 14px;
 }
 
 .info-box p {
     margin: 8px 0 0;
-
     color: #0f172a;
-
     font-weight: 600;
 }
 
@@ -245,15 +296,11 @@ button:hover {
 
 .badge {
     display: inline-block;
-
     padding: 6px 14px;
-
     background: #fff3cd;
     color: #856404;
-
     border: 1px solid #fde68a;
     border-radius: 20px;
-
     font-weight: 700;
 }
 
@@ -266,26 +313,20 @@ button:hover {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-
     gap: 10px;
-
     margin-top: 18px;
 }
 
 .paso {
     padding: 12px 18px;
-
     background: #0078d4;
     color: #ffffff;
-
     border-radius: 9px;
-
     font-weight: 600;
 }
 
 .flecha-ruta {
     color: #64748b;
-
     font-size: 23px;
     font-weight: bold;
 }
@@ -297,19 +338,14 @@ button:hover {
 
 .minimax-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 18px;
 }
 
 .decision {
     padding: 20px;
-
     text-align: center;
-
     background: #ffffff;
-
     border: 1px solid #dbe3ec;
     border-radius: 11px;
 }
@@ -321,18 +357,14 @@ button:hover {
 
 .valor {
     display: block;
-
     color: #0078d4;
-
     font-size: 28px;
     font-weight: 800;
 }
 
 .decision p {
     margin-bottom: 0;
-
     color: #64748b;
-
     font-size: 14px;
 }
 
@@ -357,24 +389,19 @@ button:hover {
 
 
 /* =========================================================
-   REPRESENTACIONES SEMANA 7
+   CONTENEDOR DE REPRESENTACIONES
    ========================================================= */
 
 .representaciones-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 18px;
-
     margin-top: 22px;
 }
 
 .representacion-card {
     padding: 20px;
-
     background: #ffffff;
-
     border: 1px solid #dbe3ec;
     border-radius: 12px;
 }
@@ -400,15 +427,11 @@ button:hover {
 .vector-box {
     margin: 10px 0 15px;
     padding: 13px;
-
     text-align: center;
-
     background: #eff6ff;
     color: #1e40af;
-
     border: 1px solid #bfdbfe;
     border-radius: 8px;
-
     font-size: 18px;
     font-weight: 700;
 }
@@ -421,14 +444,10 @@ button:hover {
 
 .distancia {
     display: inline-block;
-
     padding: 8px 16px;
-
     background: #dbeafe;
     color: #1d4ed8;
-
     border-radius: 20px;
-
     font-size: 19px;
     font-weight: 800;
 }
@@ -449,21 +468,16 @@ button:hover {
 .hechos {
     display: flex;
     flex-direction: column;
-
     gap: 8px;
-
     margin: 12px 0;
 }
 
 .hecho {
     padding: 9px 11px;
-
     background: #f3e8ff;
     color: #6b21a8;
-
     border: 1px solid #e9d5ff;
     border-radius: 7px;
-
     font-size: 14px;
     font-weight: 600;
 }
@@ -471,22 +485,16 @@ button:hover {
 .conclusion-box {
     margin-top: 16px;
     padding: 15px;
-
     text-align: center;
-
     background: #ede9fe;
     color: #5b21b6;
-
     border-radius: 9px;
 }
 
 .conclusion-titulo {
     display: block;
-
     margin-bottom: 6px;
-
     color: #6b7280;
-
     font-size: 12px;
 }
 
@@ -507,31 +515,23 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     margin: 18px 0;
 }
 
 .estado {
     width: 82%;
     max-width: 230px;
-
     padding: 12px;
-
     text-align: center;
-
     background: #0078d4;
     color: #ffffff;
-
     border-radius: 9px;
-
     font-weight: 700;
 }
 
 .flecha-automata {
     margin: 4px 0;
-
     color: #64748b;
-
     font-size: 26px;
     font-weight: bold;
 }
@@ -539,12 +539,9 @@ button:hover {
 .estado-final {
     margin-top: 15px;
     padding: 11px;
-
     text-align: center;
-
     background: #ecfdf5;
     color: #065f46;
-
     border: 1px solid #a7f3d0;
     border-radius: 8px;
 }
@@ -552,30 +549,22 @@ button:hover {
 .automata-aceptado {
     margin-top: 12px;
     padding: 10px;
-
     text-align: center;
-
     background: #dcfce7;
     color: #166534;
-
     border: 1px solid #86efac;
     border-radius: 8px;
-
     font-weight: 700;
 }
 
 .automata-rechazado {
     margin-top: 12px;
     padding: 10px;
-
     text-align: center;
-
     background: #fee2e2;
     color: #991b1b;
-
     border: 1px solid #fca5a5;
     border-radius: 8px;
-
     font-weight: 700;
 }
 
@@ -586,9 +575,7 @@ button:hover {
 
 .explicacion {
     margin-top: 14px;
-
     color: #64748b;
-
     font-size: 14px;
     line-height: 1.6;
 }
@@ -596,19 +583,15 @@ button:hover {
 .mensaje-error {
     margin-top: 10px;
     padding: 10px;
-
     background: #fff7ed;
     color: #9a3412;
-
     border-radius: 8px;
 }
 
 .comparacion-representaciones {
     margin-top: 22px;
     padding: 18px;
-
     background: #ffffff;
-
     border: 1px solid #ddd6fe;
     border-radius: 10px;
 }
@@ -629,7 +612,6 @@ button:hover {
         #f0fdfa,
         #f8fafc
     );
-
     border-left-color: #0f766e;
 }
 
@@ -640,9 +622,7 @@ button:hover {
 
 .descripcion-semana8 {
     max-width: 950px;
-
     color: #64748b;
-
     line-height: 1.7;
 }
 
@@ -653,11 +633,8 @@ button:hover {
 
 .semana8-grid {
     display: grid;
-
     grid-template-columns: repeat(3, minmax(0, 1fr));
-
     gap: 22px;
-
     margin-top: 25px;
 }
 
@@ -668,51 +645,39 @@ button:hover {
 
 .semana8-card {
     position: relative;
-
     display: flex;
     flex-direction: column;
-
     min-width: 0;
     padding: 24px;
-
     background: #ffffff;
-
     border: 1px solid #e2e8f0;
     border-radius: 15px;
-
     box-shadow: 0 5px 15px rgba(15, 23, 42, 0.06);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: 0.2s ease;
 }
 
 .semana8-card:hover {
     transform: translateY(-4px);
-
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
 }
 
 .semana8-card h3 {
     margin: 0 0 14px;
-
     font-size: 20px;
 }
 
+/* CORREGIDO: antes aparecia &gt; */
 .semana8-card > p {
     min-height: 105px;
-
     margin: 0 0 18px;
-
     color: #64748b;
-
     font-size: 14px;
     line-height: 1.7;
 }
 
 
 /* =========================================================
-   COLORES TARJETAS SEMANA 8
+   COLORES SEMANA 8
    ========================================================= */
 
 .red-neuronal {
@@ -741,41 +706,32 @@ button:hover {
 
 
 /* =========================================================
-   BLOQUES DE INFORMACION
+   DATOS SEMANA 8
    ========================================================= */
 
 .semana8-dato {
     margin-bottom: 10px;
     padding: 13px 14px;
-
     background: #f8fafc;
-
     border: 1px solid #e2e8f0;
     border-radius: 9px;
 }
 
 .semana8-dato span {
     display: block;
-
     margin-bottom: 6px;
-
     color: #64748b;
-
     font-size: 11px;
     font-weight: 700;
-
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .semana8-dato strong {
     display: block;
-
     color: #0f172a;
-
     font-size: 18px;
     font-weight: 750;
-
     overflow-wrap: anywhere;
 }
 
@@ -799,33 +755,24 @@ button:hover {
 .archivo-semana8 {
     margin-top: 8px;
     padding: 11px 13px;
-
     background: #f1f5f9;
-
     border: 1px solid #e2e8f0;
     border-radius: 8px;
 }
 
 .archivo-semana8 span {
     display: block;
-
     margin-bottom: 4px;
-
     color: #64748b;
-
     font-size: 11px;
     font-weight: 600;
-
     text-transform: uppercase;
 }
 
 .archivo-semana8 strong {
     display: block;
-
     color: #334155;
-
     font-size: 13px;
-
     overflow-wrap: anywhere;
 }
 
@@ -838,23 +785,17 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     margin-top: 22px;
 }
 
 .flujo-elemento {
     width: 82%;
-
     padding: 11px 14px;
-
     text-align: center;
-
     color: #1d4ed8;
     background: #eff6ff;
-
     border: 1px solid #bfdbfe;
     border-radius: 9px;
-
     font-size: 14px;
     font-weight: 700;
 }
@@ -873,9 +814,7 @@ button:hover {
 
 .flujo-flecha {
     margin: 5px 0;
-
     color: #94a3b8;
-
     font-size: 23px;
     font-weight: bold;
     line-height: 1;
@@ -889,15 +828,11 @@ button:hover {
 .estado-correcto {
     margin: 7px 0 15px;
     padding: 11px;
-
     text-align: center;
-
-    color: #166534;
+   olor: #166534;
     background: #dcfce7;
-
     border: 1px solid #86efac;
     border-radius: 9px;
-
     font-weight: 700;
 }
 
@@ -910,23 +845,17 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     margin-top: 7px;
 }
 
 .evidencia-paso {
     width: 82%;
-
     padding: 11px 14px;
-
     text-align: center;
-
     color: #047857;
     background: #ecfdf5;
-
     border: 1px solid #a7f3d0;
     border-radius: 9px;
-
     font-size: 14px;
     font-weight: 700;
 }
@@ -939,9 +868,7 @@ button:hover {
 
 .evidencia-flecha {
     margin: 5px 0;
-
     color: #94a3b8;
-
     font-size: 23px;
     font-weight: bold;
     line-height: 1;
@@ -955,15 +882,12 @@ button:hover {
 .relaciones-ontologicas {
     margin-top: 18px;
     padding-top: 15px;
-
     border-top: 1px solid #ede9fe;
 }
 
 .relaciones-ontologicas h4 {
     margin: 0 0 12px;
-
     color: #6d28d9;
-
     font-size: 14px;
 }
 
@@ -972,40 +896,29 @@ button:hover {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-
     gap: 7px;
-
     margin-bottom: 10px;
     padding: 11px;
-
     background: #faf5ff;
-
     border: 1px solid #e9d5ff;
     border-radius: 9px;
-
     font-size: 13px;
 }
 
 .nodo-origen,
 .nodo-destino {
     padding: 6px 9px;
-
     color: #5b21b6;
     background: #ede9fe;
-
     border-radius: 6px;
-
     font-weight: 700;
 }
 
 .tipo-relacion {
     padding: 5px 8px;
-
     color: #7c3aed;
     background: #f5f3ff;
-
     border-radius: 6px;
-
     font-weight: 600;
 }
 
@@ -1017,13 +930,10 @@ button:hover {
 .sin-relaciones {
     margin-top: 15px;
     padding: 11px;
-
     color: #64748b;
     background: #f8fafc;
-
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-
     font-size: 13px;
 }
 
@@ -1035,24 +945,20 @@ button:hover {
 .integracion-semana8 {
     margin-top: 25px;
     padding: 22px;
-
     background: #ffffff;
-
     border: 1px solid #bae6fd;
     border-radius: 13px;
-
     box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
 }
 
 .integracion-semana8 h3 {
     margin: 0 0 8px;
-
     color: #0369a1;
 }
 
+/* CORREGIDO: antes aparecia &gt; */
 .integracion-semana8 > p {
     margin-top: 0;
-
     color: #64748b;
 }
 
@@ -1061,24 +967,17 @@ button:hover {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-
     gap: 8px;
-
     margin-top: 20px;
 }
 
 .integracion-paso {
     min-width: 115px;
-
     padding: 13px 12px;
-
     display: flex;
     flex-direction: column;
-
     text-align: center;
-
     background: #f8fafc;
-
     border: 1px solid #dbe3ec;
     border-radius: 10px;
 }
@@ -1086,37 +985,29 @@ button:hover {
 .numero-paso {
     width: 25px;
     height: 25px;
-
     margin: 0 auto 7px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: #ffffff;
     background: #0078d4;
-
     border-radius: 50%;
-
     font-size: 12px;
     font-weight: 700;
 }
 
 .integracion-paso strong {
     color: #0f172a;
-
     font-size: 14px;
 }
 
 .integracion-paso small {
     margin-top: 4px;
-
     color: #64748b;
 }
 
 .prediccion-paso {
     background: #eff6ff;
-
     border-color: #93c5fd;
 }
 
@@ -1126,139 +1017,37 @@ button:hover {
 
 .integracion-flecha {
     color: #94a3b8;
-
     font-size: 22px;
     font-weight: bold;
 }
 
 
 /* =========================================================
-   INTERPRETACION SEMANA 8
-   ========================================================= */
-
-.interpretacion-semana8 {
-    margin-top: 22px;
-    padding: 21px;
-
-    background: linear-gradient(
-        135deg,
-        #f0fdfa,
-        #ecfeff
-    );
-
-    border: 1px solid #99f6e4;
-    border-radius: 12px;
-}
-
-.interpretacion-semana8 h3 {
-    margin: 0 0 15px;
-
-    color: #0f766e;
-}
-
-.interpretacion-semana8 p {
-    margin: 8px 0;
-
-    color: #475569;
-
-    line-height: 1.65;
-}
-
-.interpretacion-semana8 strong {
-    color: #0f766e;
-}
-
-
-/* =========================================================
-   RESULTADO FINAL
-   ========================================================= */
-
-.resultado {
-    background: #eefaf1;
-    border-left-color: #28a745;
-}
-
-.resultado h2 {
-    color: #15803d;
-}
-
-
-/* =========================================================
-   LISTAS
-   ========================================================= */
-
-ul {
-    margin: 0;
-
-    padding-left: 22px;
-}
-
-li {
-    margin-bottom: 8px;
-
-    line-height: 1.5;
-}
-
-
-/* =========================================================
-   RESPONSIVE TABLET
+   RESPONSIVE
    ========================================================= */
 
 @media (max-width: 950px) {
 
-    .info-grid,
-    .clasificacion-grid,
     .representaciones-grid,
-    .minimax-grid,
     .semana8-grid {
         grid-template-columns: 1fr;
     }
 
-    .escalamiento-box {
-        grid-column: span 1;
-    }
-
-    form {
-        flex-direction: column;
-    }
-
-    button {
-        width: 100%;
-    }
-
-    .semana8-card > p {
-        min-height: auto;
-    }
-
-    .integracion-flow {
-        flex-direction: column;
-    }
-
-    .integracion-paso {
-        width: 100%;
-    }
-
-    .integracion-flecha {
-        transform: rotate(90deg);
+    .minimax-grid {
+        grid-template-columns: 1fr;
     }
 }
 
-
-/* =========================================================
-   RESPONSIVE MOVIL
-   ========================================================= */
-
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
     .container {
-        width: 100%;
-
-        margin: 10px auto;
-        padding: 10px;
+        width: 96%;
+        margin: 20px auto;
     }
 
     .card {
         padding: 18px;
+        border-radius: 12px;
     }
 
     h1 {
@@ -1266,47 +1055,42 @@ li {
     }
 
     .section {
-        padding: 16px;
-    }
-
-    .ruta {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .paso {
-        text-align: center;
-    }
-
-    .flecha-ruta {
-        text-align: center;
-
-        transform: rotate(90deg);
-    }
-
-    .estado {
-        width: 95%;
-    }
-
-    .semana8-card {
         padding: 17px;
     }
 
-    .flujo-elemento,
-    .evidencia-paso {
-        width: 95%;
+    .info-grid,
+    .clasificacion-grid {
+        grid-template-columns: 1fr;
     }
 
-    .relacion-ontologica {
+    .escalamiento-box {
+        grid-column: span 1;
+    }
+
+    .representaciones-grid,
+    .semana8-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .minimax-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .integracion-flow {
         flex-direction: column;
     }
 
-    .flecha-relacion {
+    .integracion-flecha {
         transform: rotate(90deg);
     }
 
-    .integracion-semana8,
-    .interpretacion-semana8 {
-        padding: 16px;
+    .integracion-paso {
+        width: 100%;
+    }
+
+    .estado,
+    .flujo-elemento,
+    .evidencia-paso {
+        width: 100%;
     }
 }
