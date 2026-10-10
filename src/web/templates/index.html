@@ -2023,6 +2023,234 @@
 
         {% endif %}
 
+        <!-- ===================================================== -->
+<!-- SEMANA 10 -->
+<!-- RECONOCIMIENTO MEDIANTE CARACTERISTICAS -->
+<!-- ===================================================== -->
+
+{% if resultado.semana10 %}
+
+<div class="section semana10">
+
+    <h2>
+        🧠 Semana 10 - Reconocimiento Mediante Características
+    </h2>
+
+    <p class="descripcion-semana10">
+        La evidencia visual se transforma en una representación
+        numérica mediante histogramas de intensidad,
+        estadísticas regionales y texturas LBP
+        (Local Binary Patterns).
+    </p>
+
+    <div class="semana10-grid">
+
+        <!-- HISTOGRAMA -->
+
+        <div class="semana10-card histograma">
+
+            <h3>
+                📊 Histograma
+            </h3>
+
+            <p>
+                Describe la distribución de intensidades
+                presentes en la imagen.
+            </p>
+
+            <div class="estado-correcto">
+                ✅ Histograma generado
+            </div>
+
+            <div class="archivo-generado">
+
+                <span>
+                    Archivo generado
+                </span>
+
+                <strong>
+                    {{ resultado.semana10.nombre_histograma }}
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- REGIONES -->
+
+        <div class="semana10-card regiones">
+
+            <h3>
+                🧩 Regiones
+            </h3>
+
+            <p>
+                Características estadísticas obtenidas
+                a partir de las regiones conectadas.
+            </p>
+
+            <div class="semana8-dato">
+
+                <span>
+                    Regiones
+                </span>
+
+                <strong>
+                    {{ resultado.semana10.regiones }}
+                </strong>
+
+            </div>
+
+            <div class="semana8-dato">
+
+                <span>
+                    Área media
+                </span>
+
+                <strong>
+                    {{ resultado.semana10.area_media }}
+                </strong>
+
+            </div>
+
+            <div class="semana8-dato">
+
+                <span>
+                    Desviación estándar
+                </span>
+
+                <strong>
+                    {{ resultado.semana10.area_std }}
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- TEXTURAS -->
+
+        <div class="semana10-card texturas">
+
+            <h3>
+                🧱 Texturas LBP
+            </h3>
+
+            <p>
+                Patrones binarios locales utilizados para
+                describir las texturas de la imagen.
+            </p>
+
+            <div class="semana8-dato">
+
+                <span>
+                    Radio
+                </span>
+
+                <strong>
+                    {{ resultado.semana10.radio }}
+                </strong>
+
+            </div>
+
+            <div class="semana8-dato">
+
+                <span>
+                    Puntos
+                </span>
+
+                <strong>
+                    {{ resultado.semana10.puntos }}
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- VECTOR -->
+
+        <div class="semana10-card vector">
+
+            <h3>
+                🧠 Vector Final
+            </h3>
+
+            <p>
+                Integración de histogramas,
+                regiones y texturas en una
+                única representación.
+            </p>
+
+            <div class="semana8-dato">
+
+                <span>
+                    Dimensión
+                </span>
+
+                <strong>
+                    {{ resultado.semana10.tam_vector }}
+                </strong>
+
+            </div>
+
+            <div class="estado-correcto">
+                ✅ Vector generado
+            </div>
+
+            <div class="archivo-generado">
+
+                <span>
+                    Archivo generado
+                </span>
+
+                <strong>
+                    {{ resultado.semana10.nombre_vector }}
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- INTERPRETACION -->
+
+    <div class="interpretacion-semana10">
+
+        <h3>
+            💡 Interpretación de la Semana 10
+        </h3>
+
+        <p>
+            La evidencia visual fue transformada en una
+            representación numérica apta para algoritmos
+            de reconocimiento y clasificación.
+        </p>
+
+        <p>
+            Se generó un histograma de intensidades,
+            se calcularon estadísticas regionales y se
+            extrajeron patrones locales de textura mediante LBP.
+        </p>
+
+        <p>
+            El vector final contiene
+            <strong>
+                {{ resultado.semana10.tam_vector }}
+            </strong>
+            características utilizadas para describir de manera
+            compacta la evidencia visual analizada.
+        </p>
+
+    </div>
+
+</div>
+
+{% endif %}
+
 
         <!-- ===================================================== -->
         <!-- RESULTADO FINAL -->
@@ -2126,6 +2354,26 @@
                 </li>
 
                 {% endif %}
+
+                {% if resultado.semana10 %}
+
+                <li>
+                Histograma de intensidades generado
+                </li>
+
+                <li>
+                Estadísticas regionales calculadas
+                </li>
+
+                <li>
+                Texturas LBP generadas
+                </li>
+
+                <li>
+                Vector final de características construido
+                </li>
+
+              {% endif %}
 
             </ul>
 

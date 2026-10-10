@@ -3,7 +3,6 @@ import sys
 import uuid
 from pathlib import Path
 
-
 # ==========================================================
 # CONFIGURACION DE RUTAS
 # ==========================================================
@@ -18,47 +17,80 @@ SRC_DIR = os.path.abspath(
 if SRC_DIR not in sys.path:
     sys.path.insert(0, SRC_DIR)
 
-
 # ==========================================================
 # FLASK
 # ==========================================================
 
-from flask import Flask, render_template, request, url_for
-from werkzeug.utils import secure_filename
+from flask import (
+    Flask,
+    render_template,
+    request,
+    url_for
+)
 
+from werkzeug.utils import (
+    secure_filename
+)
 
 # ==========================================================
 # MODULOS DEL PROYECTO
 # ==========================================================
 
-from taxonomia.clasificador_taxonomia import clasificar_taxonomia
-from clasificador.clasificar_ticket import clasificar_ticket
-from clasificador.clasificador_csv import clasificar_csv
-from reglas.motor_reglas import aplicar_reglas
-from conocimiento.recuperador_tfidf import recuperar_informacion
-from busqueda.astar_soporte import astar
+from taxonomia.clasificador_taxonomia import (
+    clasificar_taxonomia
+)
 
+from clasificador.clasificar_ticket import (
+    clasificar_ticket
+)
+
+from clasificador.clasificador_csv import (
+    clasificar_csv
+)
+
+from reglas.motor_reglas import (
+    aplicar_reglas
+)
+
+from conocimiento.recuperador_tfidf import (
+    recuperar_informacion
+)
+
+from busqueda.astar_soporte import (
+    astar
+)
 
 # ==========================================================
 # SEMANA 7
 # ==========================================================
 
-from semana07_representaciones import analizar_representaciones
-
+from semana07_representaciones import (
+    analizar_representaciones
+)
 
 # ==========================================================
 # SEMANA 8
 # ==========================================================
 
-from semana08_red_ontologia import analizar_semana08
-
+from semana08_red_ontologia import (
+    analizar_semana08
+)
 
 # ==========================================================
 # SEMANA 9
 # ==========================================================
 
-from semana09_vision import analizar_semana09
+from semana09_vision import (
+    analizar_semana09
+)
 
+# ==========================================================
+# SEMANA 10
+# ==========================================================
+
+from semana10_caracteristicas import (
+    analizar_semana10
+)
 
 # ==========================================================
 # CREAR APLICACION FLASK
@@ -70,7 +102,6 @@ app = Flask(
     static_folder="static"
 )
 
-
 # ==========================================================
 # CONFIGURACION DE CARGA DE IMAGENES
 # ==========================================================
@@ -78,9 +109,9 @@ app = Flask(
 BASE_DIR = Path(__file__).resolve().parent
 
 UPLOAD_FOLDER = (
-    BASE_DIR
-    / "static"
-    / "uploads"
+    BASE_DIR /
+    "static" /
+    "uploads"
 )
 
 UPLOAD_FOLDER.mkdir(
@@ -88,12 +119,14 @@ UPLOAD_FOLDER.mkdir(
     exist_ok=True
 )
 
-app.config["UPLOAD_FOLDER"] = str(UPLOAD_FOLDER)
+app.config["UPLOAD_FOLDER"] = str(
+    UPLOAD_FOLDER
+)
 
-
-# Limite de 8 MB por solicitud
-app.config["MAX_CONTENT_LENGTH"] = 8 * 1024 * 1024
-
+# Limite de 8 MB
+app.config["MAX_CONTENT_LENGTH"] = (
+    8 * 1024 * 1024
+)
 
 # ==========================================================
 # EXTENSIONES PERMITIDAS
@@ -105,7 +138,6 @@ EXTENSIONES_PERMITIDAS = {
     "jpeg"
 }
 
-
 # ==========================================================
 # VALIDAR ARCHIVO
 # ==========================================================
@@ -113,12 +145,12 @@ EXTENSIONES_PERMITIDAS = {
 def extension_permitida(nombre_archivo):
 
     return (
-        "."
-        in nombre_archivo
-        and nombre_archivo.rsplit(".", 1)[1].lower()
+        "." in nombre_archivo
+        and nombre_archivo
+        .rsplit(".", 1)[1]
+        .lower()
         in EXTENSIONES_PERMITIDAS
     )
-
 
 # ==========================================================
 # RUTA PRINCIPAL
@@ -147,10 +179,12 @@ def inicio():
             ""
         ).strip()
 
-        imagen = request.files.get("imagen")
+        imagen = request.files.get(
+            "imagen"
+        )
 
         # ==================================================
-        # VARIABLES GENERALES
+        # VARIABLES
         # ==================================================
 
         categorias = None
@@ -168,46 +202,27 @@ def inicio():
         representaciones = None
         semana08 = None
         semana09 = None
+        semana10 = None
 
         imagen_url = None
 
-
         # ==================================================
-        # PROCESAR CONSULTA TEXTUAL
+        # PROCESAMIENTO DE TEXTO
         # ==================================================
 
         if consulta:
-
-            # ==============================================
-            # TAXONOMIA
-            # ==============================================
 
             categorias = clasificar_taxonomia(
                 consulta
             )
 
-
-            # ==============================================
-            # CLASIFICACION DEL TICKET
-            # ==============================================
-
             ticket = clasificar_ticket(
                 consulta
             )
 
-
-            # ==============================================
-            # SISTEMA EXPERTO
-            # ==============================================
-
             regla = aplicar_reglas(
                 consulta
             )
-
-
-            # ==============================================
-            # RECUPERACION DE INFORMACION
-            # ==============================================
 
             (
                 informacion,
@@ -216,11 +231,6 @@ def inicio():
                 consulta
             )
 
-
-            # ==============================================
-            # CLASIFICADOR CSV
-            # ==============================================
-
             (
                 categoria_predicha,
                 similitud_clase
@@ -228,39 +238,28 @@ def inicio():
                 consulta
             )
 
-
-            # ==============================================
-            # A*
-            # ==============================================
-
             ruta = astar()
 
-
-            # ==============================================
-            # SEMANA 7
-            # ==============================================
-
-            representaciones = analizar_representaciones(
-                criticidad=ticket["criticidad"],
-                impacto=ticket["impacto"],
-                tipo=ticket["tipo"]
+            representaciones = (
+                analizar_representaciones(
+                    criticidad=ticket.get(
+                        "criticidad"
+                    ),
+                    impacto=ticket.get(
+                        "impacto"
+                    ),
+                    tipo=ticket.get(
+                        "tipo"
+                    )
+                )
             )
-
-
-            # ==============================================
-            # SEMANA 8
-            # ==============================================
 
             semana08 = analizar_semana08(
                 consulta
             )
 
-
         # ==================================================
-        # SEMANA 9 - PROCESAMIENTO DE IMAGEN
-        # ==================================================
-        # Se procesa independientemente de la consulta
-        # textual.
+        # SEMANA 9 Y 10
         # ==================================================
 
         if imagen and imagen.filename:
@@ -268,11 +267,6 @@ def inicio():
             nombre_original = secure_filename(
                 imagen.filename
             )
-
-
-            # ==============================================
-            # VALIDAR EXTENSION
-            # ==============================================
 
             if extension_permitida(
                 nombre_original
@@ -284,45 +278,42 @@ def inicio():
                     .lower()
                 )
 
-
-                # ==========================================
-                # GENERAR NOMBRE UNICO
-                # ==========================================
-
                 nombre_guardado = (
-                    f"{uuid.uuid4().hex}.{extension}"
+                    f"{uuid.uuid4().hex}."
+                    f"{extension}"
                 )
-
 
                 ruta_imagen = (
-                    UPLOAD_FOLDER
-                    / nombre_guardado
+                    UPLOAD_FOLDER /
+                    nombre_guardado
                 )
-
-
-                # ==========================================
-                # GUARDAR IMAGEN
-                # ==========================================
 
                 imagen.save(
                     str(ruta_imagen)
                 )
 
-
-                # ==========================================
-                # ANALIZAR SEMANA 9
-                # ==========================================
-
                 try:
 
-                    semana09 = analizar_semana09(
-                        str(ruta_imagen),
-                        sigma=2.0
+                    # ==========================
+                    # SEMANA 9
+                    # ==========================
+
+                    semana09 = (
+                        analizar_semana09(
+                            str(ruta_imagen),
+                            sigma=2.0
+                        )
                     )
 
-                    # ======================================
-                    # URL PARA MOSTRAR IMAGEN
-                    # ======================================
+                    # ==========================
+                    # SEMANA 10
+                    # ==========================
+
+                    semana10 = (
+                        analizar_semana10(
+                            str(ruta_imagen)
+                        )
+                    )
 
                     imagen_url = url_for(
                         "static",
@@ -334,8 +325,16 @@ def inicio():
                     if semana09 is None:
                         semana09 = {}
 
-                    semana09["imagen_url"] = imagen_url
+                    semana09[
+                        "imagen_url"
+                    ] = imagen_url
 
+                    if semana10 is None:
+                        semana10 = {}
+
+                    semana10[
+                        "imagen_url"
+                    ] = imagen_url
 
                 except Exception as error:
 
@@ -344,7 +343,6 @@ def inicio():
                         f"la imagen: {str(error)}"
                     )
 
-
             else:
 
                 error_imagen = (
@@ -352,12 +350,13 @@ def inicio():
                     "Use PNG, JPG o JPEG."
                 )
 
-
         # ==================================================
-        # RESULTADO GENERAL
+        # RESULTADO FINAL
         # ==================================================
 
-        if consulta or (imagen and imagen.filename):
+        if consulta or (
+            imagen and imagen.filename
+        ):
 
             resultado = {
 
@@ -405,9 +404,12 @@ def inicio():
 
                 # Semana 9
                 "semana09":
-                    semana09
-            }
+                    semana09,
 
+                # Semana 10
+                "semana10":
+                    semana10
+            }
 
     # ======================================================
     # RENDERIZAR PAGINA
@@ -418,7 +420,6 @@ def inicio():
         resultado=resultado,
         error_imagen=error_imagen
     )
-
 
 # ==========================================================
 # EJECUTAR SERVIDOR
