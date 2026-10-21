@@ -2251,6 +2251,145 @@
 
 {% endif %}
 
+<!-- ===================================================== -->
+<!-- SEMANA 11 -->
+<!-- BENCHMARK DE MODELOS -->
+<!-- ===================================================== -->
+
+{% if resultado.semana11 %}
+
+<div class="section semana11">
+
+    <h2>
+        📊 Semana 11 - Benchmark de Modelos
+    </h2>
+
+    <p class="descripcion-semana11">
+        Comparación de desempeño entre diferentes modelos de
+        aprendizaje automático utilizando las métricas de
+        accuracy, tiempo de entrenamiento y tiempo de predicción.
+    </p>
+
+    <div class="semana11-grid">
+
+        {% for modelo in resultado.semana11.modelos %}
+
+        <div class="semana11-card">
+
+            <h3>
+                {{ modelo.modelo }}
+            </h3>
+
+            <div class="semana8-dato">
+
+                <span>
+                    Accuracy
+                </span>
+
+                <strong>
+                    {{ modelo.accuracy }}%
+                </strong>
+
+            </div>
+
+            <div class="semana8-dato">
+
+                <span>
+                    Entrenamiento
+                </span>
+
+                <strong>
+                    {{ modelo.tiempo_train }} s
+                </strong>
+
+            </div>
+
+            <div class="semana8-dato">
+
+                <span>
+                    Predicción
+                </span>
+
+                <strong>
+                    {{ modelo.tiempo_pred }} s
+                </strong>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <div class="interpretacion-semana11">
+
+    <h3>
+        🏆 Mejor Modelo
+    </h3>
+
+    <p>
+
+        El modelo con mejor desempeño fue:
+
+        <strong>
+            {{ resultado.semana11.mejor_modelo }}
+        </strong>
+
+    </p>
+
+    <p>
+
+        Accuracy alcanzado:
+
+        <strong>
+            {{ resultado.semana11.mejor_accuracy }}%
+        </strong>
+
+    </p>
+
+    <p>
+
+        El benchmark permitió comparar los algoritmos
+        Logistic Regression, Random Forest y MLP bajo
+        las mismas condiciones de entrenamiento y prueba.
+
+    </p>
+
+    <p>
+
+        Los resultados muestran que
+        <strong>
+            {{ resultado.semana11.mejor_modelo }}
+        </strong>
+        presentó el mejor equilibrio entre desempeño
+        predictivo y costo computacional para el conjunto
+        de datos utilizado.
+
+    </p>
+
+    <div class="estado-correcto">
+        ✅ Benchmark completado correctamente
+    </div>
+
+    <div class="archivo-generado">
+
+        <span>
+            Archivo generado
+        </span>
+
+        <strong>
+            {{ resultado.semana11.archivo }}
+        </strong>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endif %}
+
 
         <!-- ===================================================== -->
         <!-- RESULTADO FINAL -->
@@ -2374,6 +2513,32 @@
                 </li>
 
               {% endif %}
+
+              {% if resultado.semana11 %}
+
+                 <li>
+                Benchmark de modelos ejecutado
+                </li>
+
+                <li>
+                Accuracy comparado entre modelos
+                </li>
+
+                <li>
+                Tiempos de entrenamiento medidos
+                </li>
+
+                <li>
+                Mejor modelo identificado
+                </li>
+
+                <li>
+                Archivo benchmark.csv generado
+                </li>
+
+               {% endif %}
+
+              
 
             </ul>
 

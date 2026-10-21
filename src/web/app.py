@@ -93,6 +93,14 @@ from semana10_caracteristicas import (
 )
 
 # ==========================================================
+# SEMANA 11
+# ==========================================================
+
+from semana11_benchmark import (
+    analizar_semana11
+)
+
+# ==========================================================
 # CREAR APLICACION FLASK
 # ==========================================================
 
@@ -203,6 +211,7 @@ def inicio():
         semana08 = None
         semana09 = None
         semana10 = None
+        semana11 = None
 
         imagen_url = None
 
@@ -315,6 +324,14 @@ def inicio():
                         )
                     )
 
+                    # ==========================
+                    # SEMANA 11
+                    # ==========================
+
+                    semana11 = (
+                    analizar_semana11()
+                    )
+
                     imagen_url = url_for(
                         "static",
                         filename=(
@@ -408,7 +425,11 @@ def inicio():
 
                 # Semana 10
                 "semana10":
-                    semana10
+                    semana10,
+
+                # Semana 11
+                "semana11":
+                    semana11,
             }
 
     # ======================================================
