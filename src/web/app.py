@@ -101,6 +101,14 @@ from semana11_benchmark import (
 )
 
 # ==========================================================
+# SEMANA 13
+# ==========================================================
+
+from semana13_motor_inferencia import (
+    analizar_semana13
+)
+
+# ==========================================================
 # CREAR APLICACION FLASK
 # ==========================================================
 
@@ -212,6 +220,7 @@ def inicio():
         semana09 = None
         semana10 = None
         semana11 = None
+        semana13 = None
 
         imagen_url = None
 
@@ -332,6 +341,17 @@ def inicio():
                     analizar_semana11()
                     )
 
+                    # ==========================
+                    # SEMANA 13
+                    # ==========================
+
+                    semana13 = (
+                    analizar_semana13(
+                    ticket,
+                    semana09
+                  )
+                )
+
                     imagen_url = url_for(
                         "static",
                         filename=(
@@ -366,6 +386,8 @@ def inicio():
                     "Formato de imagen no permitido. "
                     "Use PNG, JPG o JPEG."
                 )
+
+            
 
         # ==================================================
         # RESULTADO FINAL
@@ -430,6 +452,10 @@ def inicio():
                 # Semana 11
                 "semana11":
                     semana11,
+                
+                # Semana 13
+                "semana13":
+                    semana13,
             }
 
     # ======================================================

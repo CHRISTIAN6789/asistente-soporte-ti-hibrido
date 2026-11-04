@@ -2391,6 +2391,123 @@
 {% endif %}
 
 
+<!-- ===================================================== -->
+<!-- SEMANA 13 -->
+<!-- INGENIERIA DEL CONOCIMIENTO -->
+<!-- ===================================================== -->
+
+{% if resultado.semana13 %}
+
+<div class="section semana13">
+
+    <h2>
+        🧠 Semana 13 - Ingeniería del Conocimiento
+    </h2>
+
+    <p class="descripcion-semana13">
+        Implementación de un motor de inferencia basado en
+        reglas de producción para apoyar la toma de decisiones
+        dentro del Asistente Inteligente de Soporte TI.
+    </p>
+
+    <div class="semana13-grid">
+
+        <!-- HECHOS -->
+
+        <div class="semana13-card hechos">
+
+            <h3>
+                📋 Hechos
+            </h3>
+
+            {% for hecho in resultado.semana13.hechos %}
+
+            <div class="hecho-semana13">
+
+                {{ hecho }}
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- REGLAS -->
+
+        <div class="semana13-card reglas">
+
+            <h3>
+                ⚙️ Reglas Activadas
+            </h3>
+
+            {% for regla in resultado.semana13.trazas %}
+
+            <div class="regla-semana13">
+
+                {{ regla }}
+
+            </div>
+
+            {% endfor %}
+
+            <div class="estado-correcto">
+
+                ✅ {{ resultado.semana13.reglas_activadas }}
+                reglas activadas
+
+            </div>
+
+        </div>
+
+        <!-- CONCLUSION -->
+
+        <div class="semana13-card conclusion">
+
+            <h3>
+                🎯 Conclusión
+            </h3>
+
+            <div class="conclusion-semana13">
+
+                {{ resultado.semana13.conclusion }}
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="interpretacion-semana13">
+
+        <h3>
+            💡 Interpretación
+        </h3>
+
+        <p>
+
+            El motor de inferencia evaluó los hechos
+            obtenidos durante el análisis del incidente
+            y activó automáticamente las reglas
+            correspondientes.
+
+        </p>
+
+        <p>
+
+            El razonamiento fue realizado mediante
+            encadenamiento hacia adelante, produciendo
+            una conclusión explicable a partir de
+            los hechos disponibles.
+
+        </p>
+
+    </div>
+
+</div>
+
+{% endif %}
+
+
         <!-- ===================================================== -->
         <!-- RESULTADO FINAL -->
         <!-- ===================================================== -->
@@ -2538,7 +2655,29 @@
 
                {% endif %}
 
-              
+               {% if resultado.semana13 %}
+
+                <li>
+                Base de hechos construida
+             </li>
+
+             <li>
+                Motor de inferencia ejecutado
+            </li>
+
+             <li>
+                Reglas de producción evaluadas
+            </li>
+
+            <li>
+                Trazabilidad de inferencia generada
+            </li>
+
+            <li>
+                 Conclusión automática obtenida
+            </li>
+
+{% endif %}
 
             </ul>
 
