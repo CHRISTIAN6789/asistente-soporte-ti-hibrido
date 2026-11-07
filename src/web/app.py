@@ -109,6 +109,14 @@ from semana13_motor_inferencia import (
 )
 
 # ==========================================================
+# SEMANA 14
+# ==========================================================
+
+from semana14_red_semantica import (
+    analizar_semana14
+)
+
+# ==========================================================
 # CREAR APLICACION FLASK
 # ==========================================================
 
@@ -221,6 +229,7 @@ def inicio():
         semana10 = None
         semana11 = None
         semana13 = None
+        semana14 = None
 
         imagen_url = None
 
@@ -352,6 +361,17 @@ def inicio():
                   )
                 )
 
+                    # ==========================
+                    # SEMANA 14
+                    # ==========================
+
+                    semana14 = (
+                    analizar_semana14(
+
+                  )
+                )
+
+
                     imagen_url = url_for(
                         "static",
                         filename=(
@@ -456,6 +476,10 @@ def inicio():
                 # Semana 13
                 "semana13":
                     semana13,
+
+                # Semana 14
+                "semana14":
+                    semana14,
             }
 
     # ======================================================

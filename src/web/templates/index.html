@@ -2507,6 +2507,210 @@
 
 {% endif %}
 
+<!-- ===================================================== -->
+<!-- SEMANA 14 -->
+<!-- REDES SEMANTICAS -->
+<!-- ===================================================== -->
+
+{% if resultado.semana14 %}
+
+<div class="section semana14">
+
+    <h2>
+        🌐 Semana 14 - Redes Semánticas
+    </h2>
+
+    <p class="descripcion-semana14">
+        Implementación de una red semántica para representar
+        conocimiento mediante conceptos, relaciones,
+        jerarquías, herencia e inferencia dentro del dominio
+        de Soporte TI.
+    </p>
+
+    <div class="semana14-grid">
+
+        <!-- ===================================== -->
+        <!-- CONCEPTOS -->
+        <!-- ===================================== -->
+
+        <div class="semana14-card">
+
+            <h3>
+                📚 Conceptos
+            </h3>
+
+            {% for concepto in resultado.semana14.conceptos %}
+
+            <div class="concepto-semantico">
+
+                {{ concepto }}
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- ===================================== -->
+        <!-- RELACIONES -->
+        <!-- ===================================== -->
+
+        <div class="semana14-card">
+
+            <h3>
+                🔗 Relaciones
+            </h3>
+
+            {% for relacion in resultado.semana14.relaciones %}
+
+            <div class="relacion-semantica">
+
+                <strong>
+                    {{ relacion.origen }}
+                </strong>
+
+                →
+
+                <span>
+                    {{ relacion.relacion }}
+                </span>
+
+                →
+
+                <strong>
+                    {{ relacion.destino }}
+                </strong>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- ===================================== -->
+        <!-- INFERENCIAS -->
+        <!-- ===================================== -->
+
+        <div class="semana14-card">
+
+            <h3>
+                🧠 Inferencias
+            </h3>
+
+            {% for consulta in resultado.semana14.consultas %}
+
+            <div class="semana8-dato">
+
+                <span>
+
+                    {{ consulta.pregunta }}
+
+                </span>
+
+                <strong>
+
+                    {{ consulta.resultado }}
+
+                </strong>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- ===================================== -->
+        <!-- HERENCIA -->
+        <!-- ===================================== -->
+
+        <div class="semana14-card">
+
+            <h3>
+                🏷️ Necesidades Heredadas
+            </h3>
+
+            <div class="semana8-dato">
+
+                <span>
+                    Servidor
+                </span>
+
+                <strong>
+
+                    {% for necesidad in resultado.semana14.necesidades_servidor %}
+                        {{ necesidad }}
+                        {% if not loop.last %}, {% endif %}
+                    {% endfor %}
+
+                </strong>
+
+            </div>
+
+            <div class="semana8-dato">
+
+                <span>
+                    VPN
+                </span>
+
+                <strong>
+
+                    {% for necesidad in resultado.semana14.necesidades_vpn %}
+                        {{ necesidad }}
+                        {% if not loop.last %}, {% endif %}
+                    {% endfor %}
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="interpretacion-semana14">
+
+        <h3>
+            💡 Interpretación
+        </h3>
+
+        <p>
+
+            La red semántica permite representar
+            conocimiento mediante relaciones
+            jerárquicas entre conceptos del dominio
+            de Soporte TI.
+
+        </p>
+
+        <p>
+
+            Las consultas semánticas permiten
+            inferir conocimiento que no se encuentra
+            almacenado explícitamente.
+
+        </p>
+
+        <p>
+
+            Total de relaciones registradas:
+
+            <strong>
+
+                {{ resultado.semana14.total_relaciones }}
+
+            </strong>
+
+        </p>
+
+    </div>
+
+</div>
+
+{% endif %}
+
 
         <!-- ===================================================== -->
         <!-- RESULTADO FINAL -->
@@ -2675,6 +2879,26 @@
 
             <li>
                  Conclusión automática obtenida
+            </li>
+
+{% endif %}
+
+                {% if resultado.semana14 %}
+
+            <li>
+                  Red semántica construida
+            </li>
+
+            <li>
+                  Relaciones semánticas registradas
+            </li>
+
+            <li>
+                  Inferencias ejecutadas
+            </li>
+
+            <li>
+                  Herencia de propiedades calculada
             </li>
 
 {% endif %}

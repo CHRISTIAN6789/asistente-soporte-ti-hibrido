@@ -1712,3 +1712,206 @@ button:hover {
         padding: 16px;
     }
 }
+/* =========================================================
+   SEMANA 14
+   REDES SEMANTICAS
+   ========================================================= */
+
+.semana14 {
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #ffffff
+    );
+
+    border-left-color: #1d4ed8;
+}
+
+.semana14 h2 {
+    color: #1d4ed8;
+}
+
+.descripcion-semana14 {
+    color: #64748b;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   GRID SEMANA 14
+   ========================================================= */
+
+.semana14-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   TARJETAS SEMANA 14
+   ========================================================= */
+
+.semana14-card {
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+    border-top: 5px solid #1d4ed8;
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 4px 12px rgba(
+            15,
+            23,
+            42,
+            0.05
+        );
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.semana14-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 22px rgba(
+            15,
+            23,
+            42,
+            0.10
+        );
+}
+
+.semana14-card h3 {
+
+    margin-top: 0;
+
+    color: #1d4ed8;
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   CONCEPTOS
+   ========================================================= */
+
+.concepto-semantico {
+
+    margin-bottom: 8px;
+
+    padding: 10px;
+
+    background: #dbeafe;
+
+    border: 1px solid #93c5fd;
+
+    border-radius: 8px;
+
+    color: #1e40af;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   RELACIONES
+   ========================================================= */
+
+.relacion-semantica {
+
+    margin-bottom: 8px;
+
+    padding: 10px;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 8px;
+
+    color: #1e3a8a;
+
+    font-size: 14px;
+}
+
+.relacion-semantica strong {
+    color: #1d4ed8;
+}
+
+
+/* =========================================================
+   INTERPRETACION
+   ========================================================= */
+
+.interpretacion-semana14 {
+
+    margin-top: 22px;
+
+    padding: 20px;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 10px;
+}
+
+.interpretacion-semana14 h3 {
+
+    margin-top: 0;
+
+    color: #1d4ed8;
+}
+
+.interpretacion-semana14 p {
+
+    color: #475569;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE SEMANA 14
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .semana14-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .semana14-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .semana14-card {
+
+        padding: 16px;
+    }
+
+    .interpretacion-semana14 {
+
+        padding: 16px;
+    }
+}
