@@ -2850,6 +2850,165 @@
 
 {% endif %}
 
+<!-- ===================================================== -->
+<!-- SEMANA 16 -->
+<!-- MOTOR DE REFERENCIA -->
+<!-- ===================================================== -->
+
+{% if resultado.semana16 %}
+
+<div class="section semana16">
+
+    <h2>
+        📖 Semana 16 - Motor de Referencia
+    </h2>
+
+    <p class="descripcion-semana16">
+        Implementación de un motor de referencia que consulta
+        conocimiento validado y entrega respuestas fundamentadas
+        indicando la referencia utilizada y su fuente.
+    </p>
+
+    <div class="semana16-grid">
+
+        <!-- ESTADO -->
+
+        <div class="semana16-card">
+
+            <h3>
+                ✅ Estado
+            </h3>
+
+            <div class="semana8-dato">
+
+                <span>
+                    Resultado
+                </span>
+
+                <strong>
+
+                    {{ resultado.semana16.estado }}
+
+                </strong>
+
+            </div>
+
+        </div>
+
+        <!-- REFERENCIA -->
+
+        <div class="semana16-card">
+
+            <h3>
+                📚 Referencia
+            </h3>
+
+            <div class="semana8-dato">
+
+                <span>
+                    Código
+                </span>
+
+                <strong>
+
+                    {{ resultado.semana16.referencia }}
+
+                </strong>
+
+            </div>
+
+            <div class="semana8-dato">
+
+                <span>
+                    Título
+                </span>
+
+                <strong>
+
+                    {{ resultado.semana16.titulo }}
+
+                </strong>
+
+            </div>
+
+        </div>
+
+        <!-- RESPUESTA -->
+
+        <div class="semana16-card">
+
+            <h3>
+                💬 Respuesta
+            </h3>
+
+            <p>
+
+                {{ resultado.semana16.respuesta }}
+
+            </p>
+
+        </div>
+
+        <!-- FUENTE -->
+
+        <div class="semana16-card">
+
+            <h3>
+                📄 Fuente
+            </h3>
+
+            <div class="semana8-dato">
+
+                <span>
+                    Procedencia
+                </span>
+
+                <strong>
+
+                    {{ resultado.semana16.fuente }}
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="interpretacion-semana16">
+
+        <h3>
+            💡 Interpretación
+        </h3>
+
+        <p>
+
+            El motor de referencia analiza la consulta
+            realizada por el usuario y busca coincidencias
+            dentro de referencias previamente validadas.
+
+        </p>
+
+        <p>
+
+            Cuando existe evidencia disponible se entrega
+            la referencia encontrada, una respuesta
+            fundamentada y la fuente utilizada.
+
+        </p>
+
+        <div class="estado-correcto">
+
+            ✅ Referencia procesada correctamente
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endif %}
+
 
         <!-- ===================================================== -->
         <!-- RESULTADO FINAL -->
@@ -3058,6 +3217,26 @@
 
             <li>
                  Conocimiento empresarial disponible
+            </li>
+
+{% endif %}
+
+                  {% if resultado.semana16 %}
+
+            <li>
+                  Motor de referencia ejecutado
+            </li>
+
+            <li>
+                  Referencia validada encontrada
+            </li>
+
+            <li>
+                  Fuente documental consultada
+            </li>
+
+            <li>
+                  Respuesta fundamentada entregada
             </li>
 
 {% endif %}

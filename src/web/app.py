@@ -124,6 +124,14 @@ from semana15_base_conocimiento import (
     analizar_semana15
 )
 
+# ==========================================================
+# SEMANA 16
+# ==========================================================
+
+from semana16_motor_referencia import (
+    analizar_semana16
+)
+
 
 # ==========================================================
 # CREAR APLICACION FLASK
@@ -240,6 +248,7 @@ def inicio():
         semana13 = None
         semana14 = None
         semana15 = None
+        semana16 = None
 
         imagen_url = None
 
@@ -293,6 +302,16 @@ def inicio():
 
             semana08 = analizar_semana08(
                 consulta
+            )
+
+            # ==========================
+            # SEMANA 16
+            # ==========================
+
+            semana16 = (
+            analizar_semana16(
+                consulta
+              )
             )
 
         # ==================================================
@@ -502,6 +521,9 @@ def inicio():
                  # Semana 15
                 "semana15":
                     semana15,
+                 # Semana 16
+                 "semana16":
+                    semana16,
             }
 
     # ======================================================
