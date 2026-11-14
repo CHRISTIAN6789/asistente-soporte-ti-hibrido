@@ -1915,3 +1915,243 @@ button:hover {
         padding: 16px;
     }
 }
+/* =========================================================
+   SEMANA 15
+   BASE DE CONOCIMIENTO EMPRESARIAL
+   ========================================================= */
+
+.semana15 {
+    background: linear-gradient(
+        135deg,
+        #ecfdf5,
+        #ffffff
+    );
+
+    border-left-color: #059669;
+}
+
+.semana15 h2 {
+    color: #059669;
+}
+
+.descripcion-semana15 {
+    color: #64748b;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   GRID SEMANA 15
+   ========================================================= */
+
+.semana15-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   TARJETAS SEMANA 15
+   ========================================================= */
+
+.semana15-card {
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-top: 5px solid #059669;
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 4px 12px rgba(
+            15,
+            23,
+            42,
+            0.05
+        );
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.semana15-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 22px rgba(
+            15,
+            23,
+            42,
+            0.10
+        );
+}
+
+.semana15-card h3 {
+
+    margin-top: 0;
+
+    color: #059669;
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   DOMINIOS
+   ========================================================= */
+
+.dominio-semana15 {
+
+    margin-bottom: 8px;
+
+    padding: 10px;
+
+    background: #ecfdf5;
+
+    border: 1px solid #a7f3d0;
+
+    border-radius: 8px;
+
+    color: #047857;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   EXPERTOS
+   ========================================================= */
+
+.experto-semana15 {
+
+    margin-bottom: 8px;
+
+    padding: 10px;
+
+    background: #f0fdf4;
+
+    border: 1px solid #86efac;
+
+    border-radius: 8px;
+
+    color: #166534;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ARTICULOS
+   ========================================================= */
+
+.articulo-semana15 {
+
+    margin-bottom: 10px;
+
+    padding: 12px;
+
+    background: #f8fafc;
+
+    border: 1px solid #dbeafe;
+
+    border-radius: 8px;
+}
+
+.articulo-semana15 strong {
+
+    display: block;
+
+    color: #0f172a;
+
+    margin-bottom: 4px;
+}
+
+.articulo-semana15 span {
+
+    color: #059669;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INTERPRETACION
+   ========================================================= */
+
+.interpretacion-semana15 {
+
+    margin-top: 22px;
+
+    padding: 20px;
+
+    background: #ecfdf5;
+
+    border: 1px solid #a7f3d0;
+
+    border-radius: 10px;
+}
+
+.interpretacion-semana15 h3 {
+
+    margin-top: 0;
+
+    color: #059669;
+}
+
+.interpretacion-semana15 p {
+
+    color: #475569;
+
+    line-height: 1.7;
+}
+
+.interpretacion-semana15 strong {
+
+    color: #047857;
+}
+
+
+/* =========================================================
+   RESPONSIVE SEMANA 15
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .semana15-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .semana15-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .semana15-card {
+
+        padding: 16px;
+    }
+
+    .interpretacion-semana15 {
+
+        padding: 16px;
+    }
+}

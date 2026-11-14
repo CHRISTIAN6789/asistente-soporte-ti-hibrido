@@ -2711,6 +2711,145 @@
 
 {% endif %}
 
+<!-- ===================================================== -->
+<!-- SEMANA 15 -->
+<!-- BASE DE CONOCIMIENTO EMPRESARIAL -->
+<!-- ===================================================== -->
+
+{% if resultado.semana15 %}
+
+<div class="section semana15">
+
+    <h2>
+        📚 Semana 15 - Base de Conocimiento Empresarial
+    </h2>
+
+    <p class="descripcion-semana15">
+        Gestión del conocimiento empresarial mediante SQLite,
+        dominios, expertos y artículos validados para apoyar
+        la resolución de incidentes en Soporte TI.
+    </p>
+
+    <div class="semana15-grid">
+
+        <!-- DOMINIOS -->
+
+        <div class="semana15-card">
+
+            <h3>
+                🗂️ Dominios
+            </h3>
+
+            {% for dominio in resultado.semana15.dominios %}
+
+            <div class="dominio-semana15">
+
+                {{ dominio }}
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- EXPERTOS -->
+
+        <div class="semana15-card">
+
+            <h3>
+                👨‍💻 Expertos
+            </h3>
+
+            {% for experto in resultado.semana15.expertos %}
+
+            <div class="experto-semana15">
+
+                {{ experto }}
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- ARTICULOS -->
+
+        <div class="semana15-card">
+
+            <h3>
+                📄 Artículos Validados
+            </h3>
+
+            {% for articulo in resultado.semana15.articulos %}
+
+            <div class="articulo-semana15">
+
+                <strong>
+
+                    {{ articulo[0] }}
+
+                </strong>
+
+                <span>
+
+                    {{ articulo[1] }}
+
+                </span>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <div class="interpretacion-semana15">
+
+        <h3>
+            💡 Interpretación
+        </h3>
+
+        <p>
+
+            La base de conocimiento empresarial centraliza
+            información validada utilizada para apoyar
+            diagnósticos, consultas y procesos de soporte.
+
+        </p>
+
+        <p>
+
+            Los artículos almacenados corresponden a
+            procedimientos aprobados y reutilizables
+            dentro del dominio de Soporte TI.
+
+        </p>
+
+        <p>
+
+            Total de artículos validados:
+
+            <strong>
+
+                {{ resultado.semana15.total_articulos }}
+
+            </strong>
+
+        </p>
+
+        <div class="estado-correcto">
+
+            ✅ Base de conocimiento operativa
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endif %}
+
 
         <!-- ===================================================== -->
         <!-- RESULTADO FINAL -->
@@ -2899,6 +3038,26 @@
 
             <li>
                   Herencia de propiedades calculada
+            </li>
+
+{% endif %}
+
+                 {% if resultado.semana15 %}
+
+             <li>
+                 Base de conocimiento empresarial creada
+            </li>
+
+             <li>
+                 Base de datos SQLite consultada
+            </li>
+
+             <li>
+                 Artículos validados recuperados
+            </li>
+
+            <li>
+                 Conocimiento empresarial disponible
             </li>
 
 {% endif %}

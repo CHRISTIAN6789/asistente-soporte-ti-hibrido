@@ -117,6 +117,15 @@ from semana14_red_semantica import (
 )
 
 # ==========================================================
+# SEMANA 15
+# ==========================================================
+
+from semana15_base_conocimiento import (
+    analizar_semana15
+)
+
+
+# ==========================================================
 # CREAR APLICACION FLASK
 # ==========================================================
 
@@ -230,6 +239,7 @@ def inicio():
         semana11 = None
         semana13 = None
         semana14 = None
+        semana15 = None
 
         imagen_url = None
 
@@ -371,6 +381,14 @@ def inicio():
                   )
                 )
 
+                    # ==========================
+                    # SEMANA 15
+                    # ==========================
+
+                    semana15 = (
+                    analizar_semana15()
+                )
+
 
                     imagen_url = url_for(
                         "static",
@@ -480,6 +498,10 @@ def inicio():
                 # Semana 14
                 "semana14":
                     semana14,
+
+                 # Semana 15
+                "semana15":
+                    semana15,
             }
 
     # ======================================================
